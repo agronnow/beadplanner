@@ -1,2 +1,2 @@
-beadplanner
+# beadplanner
 Application for viewing fuse bead designs and converting images to fuse bead designs
