@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Colors>
+  <Color type='Hama' name='H01 - White' red='236' green='237' blue='237' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H02 - Cream' red='240' green='232' blue='185' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H03 - Yellow' red='240' green='185' blue='1' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H04 - Orange' red='230' green='79' blue='39' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H05 - Red' red='182' green='49' blue='54' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H06 - Pink' red='225' green='136' blue='159' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H07 - Purple' red='105' green='74' blue='130' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H08 - Blue' red='44' green='70' blue='144' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H09 - Light blue' red='48' green='92' blue='176' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H10 - Green' red='37' green='104' blue='71' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H11 - Light green' red='73' green='174' blue='137' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H12 - Brown' red='83' green='65' blue='55' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H13 - Translucent red' red='192' green='36' blue='53' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H16 - Translucent green' red='55' green='184' blue='118' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H17 - Grey' red='131' green='136' blue='138' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H18 - Black' red='46' green='47' blue='49' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H19 - Clear' red='216' green='210' blue='206' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H20 - Reddish brown' red='127' green='51' blue='42' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H21 - Light brown' red='165' green='105' blue='63' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H22 - Dark red' red='165' green='45' blue='54' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H24 - Translucent purple' red='104' green='62' blue='154' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H25 - Translucent brown' red='135' green='89' blue='61' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H26 - Flesh' red='222' green='155' blue='144' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H27 - Beige' red='222' green='180' blue='139' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H28 - Dark green' red='54' green='63' blue='56' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H29 - Claret' red='185' green='57' blue='94' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H30 - Burgundy' red='89' green='47' blue='56' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H31 - Turquoise' red='103' green='151' blue='174' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H32 - Neon fuchsia' red='255' green='32' blue='141' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H33 - Fluorescent cerise' red='255' green='57' blue='86' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H34 - Neon yellow' red='229' green='239' blue='19' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H35 - Neon red' red='255' green='40' blue='51' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H36 - Neon blue' red='35' green='83' blue='176' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H37 - Neon green' red='6' green='183' blue='60' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H38 - Neon orange' red='253' green='134' blue='0' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H39 - Fluorescent yellow' red='241' green='242' blue='28' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H40 - Fluorescent orange' red='254' green='99' blue='11' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H41 - Fluroescent blue' red='38' green='89' blue='178' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H42 - Fluorescent green' red='12' green='189' blue='81' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H43 - Pastel yellow' red='240' green='234' blue='55' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H44 - Pastel red' red='238' green='105' blue='114' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H45 - Pastel purple' red='136' green='109' blue='185' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H46 - Pastel blue' red='98' green='158' blue='215' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H47 - Pastel green' red='131' green='203' blue='112' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H48 - Pastel pink' red='207' green='112' blue='183' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H49 - Azure' red='73' green='152' blue='188' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H60 - Teddybear brown' red='244' green='148' blue='34' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H70 - Light grey' red='180' green='185' blue='188' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H71 - Dark grey' red='64' green='64' blue='64' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H75 - Tan' red='200' green='171' blue='147' owned='0' used='0' enabled='True' />
+  <Color type='Hama' name='H76 - Nougat' red='140' green='100' blue='75' owned='0' used='0' enabled='True' />
+</Colors>

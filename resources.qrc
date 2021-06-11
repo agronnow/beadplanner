@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>bgbrush.png</file>
+        <file>zoom-fit-best.png</file>
+        <file>zoom-in.png</file>
+        <file>zoom-original.png</file>
+        <file>zoom-out.png</file>
+        <file>object-flip-horizontal.png</file>
+    </qresource>
+</RCC>

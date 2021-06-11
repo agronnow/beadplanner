@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Colors>
+   <Color name='H01 - white' red='236' green='237' blue='237' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H02 - Cream' red='240' green='232' blue='185' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H03 - yellow' red='240' green='185' blue='1' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H04 - orange' red='230' green='79' blue='39' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H05 - red' red='182' green='49' blue='54' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H06 - pink' red='225' green='136' blue='159' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H07 - purple' red='105' green='74' blue='130' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H08 - Dark Blue (Blue)' red='44' green='70' blue='144' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H09 - Light Blue' red='48' green='92' blue='176' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H10 - Green' red='37' green='104' blue='71' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H11 - light green' red='73' green='174' blue='137' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H12 - brown' red='83' green='65' blue='55' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H13 - transparent red' red='192' green='36' blue='53' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H16 - transparent green' red='55' green='184' blue='118' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H17 - grey' red='131' green='136' blue='138' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H18 - black' red='46' green='47' blue='49' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H19 - Clear' red='216' green='210' blue='206' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H20 - Reddish Brown' red='127' green='51' blue='42' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H21 - light brown' red='165' green='105' blue='63' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H22 - Dark Red' red='165' green='45' blue='54' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H24 - Translucent purple' red='104' green='62' blue='154' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H25 - Translucent Brown' red='135' green='89' blue='61' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H26 - Flesh' red='222' green='155' blue='144' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H27 - Beige' red='222' green='180' blue='139' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H28 - Army (Dark Green)' red='54' green='63' blue='56' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H29 - Claret' red='185' green='57' blue='94' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H30 - burgundy' red='89' green='47' blue='56' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H31 - Turquoise' red='103' green='151' blue='174' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H32 - Neon Pink (Fucsia)' red='255' green='32' blue='141' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H33 - Cerise' red='255' green='57' blue='86' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H34 - Neon Yellow' red='229' green='239' blue='19' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H35 - Neon Red' red='255' green='40' blue='51' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H36 - Neon Blue' red='35' green='83' blue='176' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H37 - Neon Green' red='6' green='183' blue='60' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H38 - Neon Orange' red='253' green='134' blue='0' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H39 - Fluorescent Yellow' red='241' green='242' blue='28' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H40 - Fluorescent Orange' red='254' green='99' blue='11' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H41 - Fluorescent Blue' red='38' green='89' blue='178' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H42 - Fluorescent Green' red='12' green='189' blue='81' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H43 - pastel yellow' red='240' green='234' blue='55' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H44 - Pastel Red' red='238' green='105' blue='114' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H45 - Pastel Purple' red='136' green='109' blue='185' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H46 - pastel blue' red='98' green='158' blue='215' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H47 - pastel green' red='131' green='203' blue='112' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H48 - Pastel Pink' red='207' green='112' blue='183' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='H49 - Azure' red='73' green='152' blue='188' type='Hama' owned='0' used='0' enabled='true'/>
+   <Color name='N01 - Black' red='58' green='61' blue='65' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N02 - Dark Brown' red='80' green='68' blue='59' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N03 - Brown Medium' red='90' green='62' blue='54' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N04 - Maroon (Wine Red)' red='129' green='53' blue='71' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N05 - Caramel' red='167' green='98' blue='36' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N06 - Tan (Beige)' red='173' green='150' blue='126' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N07 - Sand (Skin)' red='238' green='177' blue='130' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N08 - Ash (Ash Grey' red='141' green='139' blue='127' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N09 - Hunter Green' red='47' green='74' blue='57' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N10 - Light Grey' red='211' green='203' blue='203' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N11 - Purple' red='100' green='69' blue='145' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N12 - Ivory' red='226' green='208' blue='191' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N13 - Orange (Clear Orange)' red='243' green='96' blue='27' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N14 - Yellow' red='249' green='202' blue='0' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N15 - White' red='244' green='244' blue='243' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N16 - Green' red='41' green='122' blue='59' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N17 - Bright Blue (Blue)' red='59' green='117' blue='203' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N18 - Light Rose (Light Pink)' red='225' green='180' blue='171' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N19 - Red (Light Red)' red='223' green='38' blue='56' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N20 - Light Brown' red='181' green='139' blue='105' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N21 - Lt Yellow' red='245' green='236' blue='141' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N22 - Lime (pearl Green)' red='72' green='175' blue='79' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N23 - Med Blue (pastel blue)' red='113' green='163' blue='230' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N24 - Lavender' red='182' green='160' blue='219' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N25 - Pink (old rose)' red='238' green='106' blue='151' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N26 - Peach (Light orange)' red='252' green='168' blue='121' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N27 - Chocolate' red='135' green='95' blue='82' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N28 - Sky (light blue)' red='167' green='198' blue='241' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N29 - Gold/Orange (Pearl Orange)' red='238' green='149' blue='39' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='N30 - Kiwi (Olive)' red='199' green='191' blue='94' type='Nabbi' owned='0' used='0' enabled='true'/>
+   <Color name='P01 - White' red='241' green='241' blue='241' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P02 - Cream' red='224' green='222' blue='169' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P03 - Yellow' red='236' green='216' blue='0' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P04 - Orange' red='237' green='97' blue='32' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P05 - Red' red='191' green='46' blue='64' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P06 - Bubblegum' red='221' green='102' blue='155' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P07 - Purple' red='96' green='64' blue='137' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P08 - Dark Blue' red='43' green='63' blue='135' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P69 - Light Blue' red='51' green='112' blue='192' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P10 - Dark Green' red='28' green='117' blue='62' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P100 - Pearl Coral' red='249' green='126' blue='121' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P101 - Pearl Light Blue' red='122' green='174' blue='162' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='p102 - Pearl Green' red='132' green='183' blue='145' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P103 - Pearl Yellow' red='202' green='192' blue='51' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P104 - Pearl Light Pink' red='215' green='168' blue='162' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P105 - Silver' red='119' green='123' blue='129' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P11 - Light Green' red='86' green='186' blue='159' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P12 - Brown' red='81' green='57' blue='49' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P17 - Grey' red='138' green='141' blue='145' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P18 - Black' red='46' green='47' blue='50' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P20 - Rust' red='140' green='55' blue='44' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P21 - Light Brown' red='129' green='93' blue='52' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P80 - Peach' red='238' green='186' blue='178' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P35 - Tan' red='188' green='147' blue='113' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P38 - Magenta' red='242' green='42' blue='123' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P47 - Neon Yellow' red='220' green='224' blue='2' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P48 - Neon Orange' red='255' green='119' blue='0' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P49 - Neon Green' red='1' green='158' blue='67' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P50 - Neon Pink' red='255' green='57' blue='145' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P52 - Pastel Blue' red='83' green='144' blue='209' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P53 - Pastel Green' red='118' green='200' blue='130' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P54 - Pastel Lavender' red='138' green='114' blue='193' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P56 - Pastel Yellow' red='254' green='248' blue='117' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P57 - Chedder' red='241' green='170' blue='12' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P58 - Toothpaste' red='147' green='200' blue='212' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P59 - Hot Coral' red='255' green='56' blue='81' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P60 - Plum' red='162' green='75' blue='156' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P61 - Kiwi Lime' red='108' green='190' blue='19' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P62 - Cyan' red='43' green='137' blue='198' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P63 - Blush' red='255' green='130' blue='133' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P70 - Periwinkle Blue' red='100' green='124' blue='190' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P75 - Glow Green' red='190' green='198' blue='150' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P79 - Light Pink' red='246' green='179' blue='221' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P80 - Bright Green' red='79' green='173' blue='66' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P81 - Light Gray' red='177' green='181' blue='178' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P179 - Evergreen' red='53' green='83' blue='67' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P82 - Lavender' red='173' green='152' blue='212' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P83 - Pink' red='228' green='72' blue='146' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P85 - Gold' red='187' green='118' blue='52' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P88 - Raspberry' red='165' green='48' blue='97' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P90 - Butterscotch' red='212' green='132' blue='55' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P91 - Parrot Green' red='6' green='124' blue='129' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P92 - Dark Grey' red='77' green='81' blue='86' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P93 - Blueberry Cream' red='130' green='151' blue='217' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P96 - Cranapple' red='128' green='50' blue='69' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P97 - Prickly Pear' red='189' green='218' blue='1' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='P98 - Sand' red='228' green='182' blue='144' type='Perler' owned='0' used='0' enabled='true'/>
+   <Color name='S01/R01 - White' red='233' green='231' blue='230' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S02/R02 - Burning Sand' red='254' green='144' blue='143' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S03/R03 - Tangerine' red='254' green='164' blue='2' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S04/R04 - Orange' red='253' green='97' blue='73' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S05/R05 - Tall Poppy' red='221' green='52' blue='68' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S06/R06 - Raspberry pink' red='235' green='102' blue='190' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S07/R07 - Gray 2' red='142' green='143' blue='147' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S08/R08 - Emerald' red='82' green='204' blue='106' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S09/R09 - Dark Green' red='42' green='93' blue='98' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S10/R10 - Baby Blue' red='97' green='168' blue='223' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S11/R11 - Dark Blue' red='40' green='68' blue='146' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S12/R12 - Pastel Lavender' red='137' green='98' blue='173' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S13/R13 - Black' red='31' green='31' blue='33' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S14/R14 - Sandstorm' red='239' green='221' blue='6' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S15/R15 - Redwood' red='124' green='69' blue='69' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S16/R16 - Brown' red='120' green='88' blue='78' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S17/R17 - light brown' red='89' green='71' blue='67' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S18/R18 - Sand' red='206' green='155' blue='134' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S19/R19 - Bubblegum' red='237' green='174' blue='172' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S20/R20 - Green' red='84' green='145' blue='96' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S21/R21 - Pastel Green' red='132' green='197' blue='81' type='Artkal' owned='1000' used='0' enabled='true'/>
+   <Color name='S22/R22 - Purple' red='85' green='72' blue='137' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S23/R23 - Royal Purple' red='125' green='102' blue='173' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S24/R24 - True Blue' red='57' green='109' blue='188' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S25/R25 - Hot Pink' red='254' green='91' blue='186' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S26/R26 - Magenta' red='254' green='66' blue='137' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S27/R27 - Yellow' red='240' green='206' blue='1' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S28/R28 - Lily Pink' red='223' green='159' blue='205' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S29/R29 - Pastel Yellow' red='240' green='226' blue='79' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S30/R30 - Shadow Green' red='161' green='198' blue='206' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S31/R31 - Sea Mist' red='171' green='218' blue='202' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S32/R32 - Beeswax' red='248' green='197' blue='131' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S33/R33 - Maverick' red='192' green='174' blue='219' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S35/R35 - Mona Lisa' red='249' green='188' blue='193' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S36/R36 - Old Pink' red='200' green='103' blue='130' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S37/R37 - Blue Green' red='132' green='199' blue='198' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S38/R38 - burgundy' red='161' green='48' blue='83' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S39/R39 - Yellow Orange' red='255' green='131' blue='75' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S40/R40 - Carnation Pink' red='253' green='145' blue='214' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S41/R41 - Copper' red='157' green='91' blue='46' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S42/R42 - Silver' red='103' green='107' blue='115' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S43/R43 - Gray 3' red='102' green='103' blue='106' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S44/R44 - Sky Blue' red='164' green='200' blue='232' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S45/R45 - Medium Turquoise' red='63' green='152' blue='158' type='Artkal' owned='1000' used='0' enabled='true'/>
+   <Color name='S46/R46 - Bright Green' red='168' green='228' blue='42' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S47/R47 - Marigold' red='156' green='116' blue='60' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S48/R48 - Corn' red='246' green='191' blue='5' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S49/R49 - Mulberry Wood' red='120' green='49' blue='90' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S50/R50 - Mandys Pink' red='253' green='164' blue='126' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S51/R51 - Spring Sun' red='243' green='217' blue='182' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S52/R52 - Picasso' red='239' green='229' blue='109' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S53/R53 - Turquoise' red='101' green='147' blue='223' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S54/R54 - Light Blue' red='26' green='117' blue='208' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S55/R57 - Pistachio' red='160' green='213' blue='137' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S56/R59 - Outrageous Orange' red='254' green='127' blue='80' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S57/R63 - Buccaneer' red='152' green='78' blue='67' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S58/R64 - Paprika' red='172' green='44' blue='68' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S60/R66 - Lavender' red='166' green='117' blue='191' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S61/R68 - Key Lemon Pie' red='187' green='197' blue='40' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S62/R69 - Green Tea' red='56' green='112' blue='97' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S63/R70 - Metallic Gold' red='105' green='96' blue='70' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S64/R55 - Black Rock' red='54' green='61' blue='92' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S65/R58 - Canary' red='247' green='248' blue='57' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S66/R70 - Blaze Orange' red='253' green='81' blue='67' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S67/R61 - Vanilla' red='226' green='193' blue='178' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S68 - Tan' red='175' green='150' blue='102' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='S69 - Mine Shaft' red='67' green='72' blue='78' type='Artkal' owned='1000' used='0' enabled='true'/>
+   <Color name='S70 - Dark Algae' red='146' green='183' blue='1' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S71 - Jade Green' red='49' green='131' blue='50' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S72 - Light Sea Blue' red='119' green='191' blue='209' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S73 - Steel blue' red='91' green='159' blue='199' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S74 - azure' red='64' green='144' blue='192' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S75 - dark steel blue' red='56' green='121' blue='166' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S76 - sea blue' red='59' green='135' blue='171' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S77 - Ghost white' red='211' green='211' blue='208' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S78 - Ash Gray' red='189' green='189' blue='187' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S79 - Gray 1' red='163' green='167' blue='169' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S80 - Dark Olive' red='124' green='137' blue='52' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S81 - Deer' red='184' green='138' blue='98' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S82 - Clay' red='145' green='106' blue='77' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S83 - Sienna' red='174' green='103' blue='53' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S84 - Deep Chestnut' red='165' green='87' blue='97' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S85 - Red Wine' red='140' green='65' blue='74' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S86 - Goldenrod' red='233' green='181' blue='4' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S87 - Coral Red' red='250' green='97' blue='106' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S88 - Dark Pink' red='217' green='59' blue='128' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S89 - Gray 4' red='88' green='92' blue='99' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S90 - Pastel Orange' red='251' green='183' blue='73' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='S91 - Brunswick Green' red='52' green='64' blue='66' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name="S92 - " red="186" green="158" blue="3" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S93 - " red="214" green="172" blue="149" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S94 - " red="228" green="136" blue="133" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S95 - " red="216" green="108" blue="107" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S97 - " red="218" green="104" blue="45" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S98 - " red="128" green="176" blue="234" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S99 - " red="122" green="186" blue="217" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S100 - " red="106" green="165" blue="187" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S102 - " red="21" green="110" blue="204" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S103 - " red="26" green="84" blue="169" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S104 - " red="43" green="118" blue="163" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S105 - " red="44" green="113" blue="149" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S106 - " red="28" green="93" blue="155" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S107 - " red="68" green="160" blue="235" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S108 - " red="193" green="176" blue="119" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S109 - " red="184" green="168" blue="105" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S110 - " red="155" green="138" blue="84" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S111 - " red="139" green="130" blue="48" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S112 - " red="127" green="111" blue="56" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S113 - " red="174" green="168" blue="135" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S114 - " red="162" green="154" blue="103" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S115 - " red="128" green="126" blue="86" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S117 - " red="118" green="119" blue="78" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S118 - " red="85" green="101" blue="53" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S119 - " red="152" green="216" blue="212" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S121 - " red="142" green="182" blue="161" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S122 - " red="83" green="180" blue="111" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S123 - " red="83" green="191" blue="0" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S124 - " red="47" green="108" blue="51" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S125 - " red="50" green="111" blue="110" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S126 - " red="32" green="93" blue="109" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S127 - " red="254" green="194" blue="244" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S128 - " red="225" green="132" blue="218" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S129 - " red="251" green="161" blue="194" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S130 - " red="237" green="102" blue="149" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S131 - " red="184" green="158" blue="220" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S132 - " red="234" green="54" blue="106" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S133 - " red="221" green="55" blue="175" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S134 - " red="132" green="57" blue="155" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S135 - " red="175" green="183" blue="237" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S136 - " red="174" green="178" blue="231" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S137 - " red="136" green="148" blue="227" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S138 - " red="96" green="126" blue="208" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S139 - " red="111" green="131" blue="211" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S140 - " red="94" green="111" blue="200" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S141 - " red="87" green="113" blue="201" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S142 - " red="70" green="98" blue="191" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S143 - " red="55" green="71" blue="158" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S144 - " red="39" green="61" blue="127" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S146 - " red="134" green="30" blue="58" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S147 - " red="132" green="178" blue="161" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S148 - " red="108" green="81" blue="74" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S149 - " red="251" green="214" blue="155" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S150 - " red="138" green="132" blue="208" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S151 - " red="61" green="77" blue="47" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S152 - " red="191" green="163" blue="227" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S153 - " red="190" green="179" blue="222" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S154 - " red="229" green="181" blue="157" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S155 - " red="179" green="128" blue="92" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S156 - " red="89" green="93" blue="98" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S157 - " red="75" green="79" blue="85" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S158 - " red="60" green="63" blue="70" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S159 - " red="130" green="134" blue="139" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S145 - x" red="0" green="0" blue="0" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S145 - x" red="0" green="0" blue="0" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S145 - x" red="0" green="0" blue="0" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S145 - x" red="0" green="0" blue="0" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S145 - x" red="0" green="0" blue="0" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S145 - x" red="0" green="0" blue="0" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S145 - x" red="0" green="0" blue="0" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name="S145 - x" red="0" green="0" blue="0" type="Artkal" owned="0" used="0" enabled="True"/>
+   <Color name='SN2 - Neon Green' red='1' green='198' blue='62' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='SN3 - Neon Yellow' red='242' green='243' blue='60' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='SN4 - Neon Rose' red='255' green='71' blue='122' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='SP1/RP1 - Pearlescent Green' red='147' green='202' blue='135' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='SP2/RP2 - Pearlescent Tangerine' red='254' green='127' blue='84' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='SP3/RP3 - Pearlescent Orange' red='240' green='161' blue='73' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='SP4/RP4 - Pearlescent Pink' red='220' green='158' blue='169' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='SP5/RP5 - Pearlescent Red' red='214' green='60' blue='83' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='SP6/RP6 - Pearlescent Blue' red='44' green='78' blue='151' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='SP7/RP7 - Pearlescent Purple' red='100' green='66' blue='126' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='SP8 - Pearlescent White' red='224' green='219' blue='202' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='ST1/RT1 - Transparent' red='199' green='188' blue='184' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='ST2/RT2 - Transparent Pink' red='249' green='84' blue='152' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='ST3/RT3 - Transparent Tangering' red='255' green='124' blue='69' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='ST4/RT4 - Transparent Yellow' red='218' green='223' blue='61' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='ST5 - transparent green' red='15' green='174' blue='88' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='ST6 - Transparent Purple' red='132' green='119' blue='179' type='Artkal' owned='' used='0' enabled=''/>
+   <Color name='xR56 - DISCONTINUED - ' red='112' green='215' blue='125' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='xR62 - DISCONTINUED - ' red='121' green='55' blue='68' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='xR65 - DISCONTINUED - ' red='207' green='40' blue='60' type='Artkal' owned='0' used='0' enabled='false'/>
+   <Color name='xR67 - DISCONTINUED - ' red='253' green='204' blue='70' type='Artkal' owned='0' used='0' enabled='false'/>
+</Colors>
