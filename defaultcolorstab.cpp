@@ -18,7 +18,7 @@ DefaultColorsTab::DefaultColorsTab(BeadColorTable& table, QWidget *parent) : QWi
 
 void DefaultColorsTab::update()
 {
-    QString url = "https://github.com/agronnow/beadplanner/blob/master/default_colors.xml?raw=true";
+    QString url = "https://raw.githubusercontent.com/agronnow/beadplanner/master/default_colors.xml";
     QNetworkAccessManager manager;
     QNetworkReply *response = manager.get(QNetworkRequest(QUrl(url)));
     QEventLoop event;
@@ -32,7 +32,7 @@ void DefaultColorsTab::update()
     {
         idxbeg += 9;
         auto version = content.mid(idxbeg, idxend - idxbeg);
-        std::cout << beadTable.getVersion().toStdString() << " online: " << version.toStdString() << std::endl;
+        //std::cout << beadTable.getVersion().toStdString() << " online: " << version.toStdString() << std::endl;
         if (version != beadTable.getVersion())
         {
             if (QMessageBox::question(this, tr("Bead table update"), tr("There is a newer bead table available. Do you wish to update?")) == QMessageBox::Yes)
