@@ -54,7 +54,6 @@ void BeadColorTable::loadXML(const QString& xmlInfo, bool custom, bool update)
     else
     {
         xmlFile.setFileName(xmlInfo);
-        //std::cout << xmlInfo.toStdString() << std::endl;
         if (!xmlFile.open(QIODevice::ReadOnly | QIODevice::Text))
         {
                 throw("Failed to open file "+xmlInfo);
