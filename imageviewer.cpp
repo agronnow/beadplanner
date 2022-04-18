@@ -465,7 +465,7 @@ void ImageViewer::closeEvent(QCloseEvent *event)
 void ImageViewer::about()
 {
     QMessageBox::about(this, tr("About Bead Planner"),
-                           tr("Bead Planner version 1.0.0 (2021)\nBy Asger Grønnow\nasgergronnow@gmail.com\nReleased under GPLv3 licence (for the full licence text see the file COPYING)\nSource code freely available at https://github.com/agronnow/beadplanner"));
+                           tr("Bead Planner version 1.0.0 (2022)\nBy Asger Grønnow\nasgergronnow@gmail.com\nReleased under GPLv3 licence (for the full licence text see the file COPYING)\nSource code freely available at https://github.com/agronnow/beadplanner"));
 }
 
 void ImageViewer::createActions()

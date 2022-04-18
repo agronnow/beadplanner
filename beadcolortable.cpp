@@ -54,7 +54,7 @@ void BeadColorTable::loadXML(const QString& xmlInfo, bool custom, bool update)
     else
     {
         xmlFile.setFileName(xmlInfo);
-        std::cout << xmlInfo.toStdString() << std::endl;
+        //std::cout << xmlInfo.toStdString() << std::endl;
         if (!xmlFile.open(QIODevice::ReadOnly | QIODevice::Text))
         {
                 throw("Failed to open file "+xmlInfo);
@@ -69,7 +69,7 @@ void BeadColorTable::loadXML(const QString& xmlInfo, bool custom, bool update)
         if (token == QXmlStreamReader::StartDocument) continue;
         if (token == QXmlStreamReader::StartElement)
         {
-            if (xmlReader.name() == "Version") {version = xmlReader.readElementText();std::cout << "read version: " << version.toStdString() << std::endl;}
+            if (xmlReader.name() == "Version") version = xmlReader.readElementText();
             if (xmlReader.name() == "Color")
             {
                 QXmlStreamAttributes attributes = xmlReader.attributes();
