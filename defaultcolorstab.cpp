@@ -18,7 +18,7 @@ DefaultColorsTab::DefaultColorsTab(BeadColorTable& table, QWidget *parent) : QWi
 
 void DefaultColorsTab::update()
 {
-    QString url = "https://www.astro.rug.nl/~gronnow/default_colors.xml";
+    QString url = "https://github.com/agronnow/beadplanner/blob/master/default_colors.xml?raw=true";
     QNetworkAccessManager manager;
     QNetworkReply *response = manager.get(QNetworkRequest(QUrl(url)));
     QEventLoop event;
