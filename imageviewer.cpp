@@ -862,8 +862,8 @@ void ImageViewer::editPalette()
     {
         if (curSettings.savePalette)
         {
-            defaultTable.saveXML("default_colors.xml");
-            customTable.saveXML("custom_colors.xml");
+            defaultTable.saveXML("default_colors.xml", true);
+            customTable.saveXML("custom_colors.xml", false);
         }
         beadTable.mergeTables(defaultTable, customTable);
         if (recolored)
@@ -872,6 +872,8 @@ void ImageViewer::editPalette()
             convertToBeadColors();
         }
     }
+    else beadTable.setVersion(defaultTable.getVersion());
+    std::cout << beadTable.getVersion().toStdString() << std::endl;
 }
 
 void ImageViewer::listBeadCounts()

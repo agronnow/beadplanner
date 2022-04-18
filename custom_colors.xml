@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Table>
+    <Colors>
+        <Color code="H01" name="white" red="236" green="237" blue="237" type="Hama" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="H02" name="Cream" red="240" green="232" blue="185" type="Hama" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="H70" name="Light Gray" red="186" green="190" blue="194" type="Hama" owned="0" used="0" enabled="true" source=""/>
+    </Colors>
+</Table>

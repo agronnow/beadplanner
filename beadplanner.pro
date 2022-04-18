@@ -3,6 +3,7 @@ QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 QT += xml
+QT += network
 
 requires(qtConfig(filedialog))
 qtHaveModule(printsupport): QT += printsupport
@@ -30,6 +31,8 @@ SOURCES += \
     beadsizedialog.cpp \
     colorchange.cpp \
     customcolordialog.cpp \
+    customcolorstab.cpp \
+    defaultcolorstab.cpp \
     griddialog.cpp \
     imagecolorsdialog.cpp \
     imagescene.cpp \
@@ -57,6 +60,8 @@ HEADERS += \
     beadsizedialog.h \
     colorchange.h \
     customcolordialog.h \
+    customcolorstab.h \
+    defaultcolorstab.h \
     grid.h \
     griddialog.h \
     imagecolorsdialog.h \

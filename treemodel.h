@@ -11,6 +11,7 @@ public:
 
     void addItem(const BeadColor&, const BeadID&);
     void changeItemParent(const QModelIndex&, BeadColorItem*, const BeadID&);
+    void rebuild();
     QVariant data(const QModelIndex&, int) const override;
     bool removeRows(int, int, const QModelIndex &parent = QModelIndex()) override;
     bool setData(const QModelIndex&, const QVariant&, int) override;

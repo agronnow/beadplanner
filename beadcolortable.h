@@ -42,9 +42,10 @@ public:
     BeadColor& operator[](const BeadID& id) {return map.at(id.brand)[id.idx];}
     const BeadColor& operator[](const BeadID& id) const {return map.at(id.brand)[id.idx];}
     void createSeparateTables(BeadColorTable&, BeadColorTable&) const;
+    void removeDefaultColors();
     void mergeTables(BeadColorTable&, BeadColorTable&);
-    void loadXML(const QString&, bool);
-    void saveXML(const QString&) const;
+    void loadXML(const QString&, bool, bool);
+    void saveXML(const QString&, bool) const;
     double findClosestColor(QRgb, BeadID&) const;
     void stringOfMatches(QRgb, std::string&) const;
     void createTree(BeadColorItem*) const;
@@ -52,22 +53,26 @@ public:
     void createTable(BeadColorItem*, QRgb) const;
     void createPalette(std::map<BeadID, int>&) const;
     std::size_t changeKey(const BeadID&, const std::string&);
+    void clear() {map.clear();}
     bool find(BeadID&, const std::string&, const std::string&, const std::string&) const;
     void insert(const std::string& key, BeadColor col) {map[key].push_back(col);}
     void remove(const BeadID& id);
     void resetCounts();
-    bool hasDefault(const std::string& key) const {return bool(keysContainingDefault.count(key));}
-    bool hasCustom(const std::string& key) const {return bool(keysContainingCustom.count(key));}
+    //bool hasDefault(const std::string& key) const {return bool(keysContainingDefault.count(key));}
+    //bool hasCustom(const std::string& key) const {return bool(keysContainingCustom.count(key));}
     void createKeyList(QStringList& list) const {for(auto const& cols: map)  list.push_back(QString::fromStdString(cols.first));}
     void setColorDistanceMeasure(colordistanceMeasure m) {measure = m;}
+    const QString& getVersion() const {return version;}
+    void setVersion(const QString& v) {version = v;}
 
 private:
     double colorDifference(const BeadColor&, QRgb) const;
     double getCIEDE2000(const CIELAB&, const CIELAB&) const;
     BeadColorMap map; //Map of vectors whose keys are different bead brands
-    std::unordered_set<std::string> keysContainingCustom;
-    std::unordered_set<std::string> keysContainingDefault;
+    //std::unordered_set<std::string> keysContainingCustom;
+    //std::unordered_set<std::string> keysContainingDefault;
     colordistanceMeasure measure = colordistanceMeasure::CIEDE2000;
+    QString version = "1";
 };
 
 #endif // BEADCOLORTABLE_H

@@ -10,6 +10,15 @@ TreeModel::TreeModel(BeadColorTable& table, QObject *parent)
     beadTable.createTree(rootItem);
 }
 
+void TreeModel::rebuild()
+{
+    emit beginResetModel();
+    delete rootItem;
+    rootItem = new BeadColorItem("Brand,Code,Name,Red,Green,Blue,Source", 0, nullptr);
+    beadTable.createTree(rootItem);
+    emit endResetModel();
+}
+
 void TreeModel::addItem(const BeadColor& bead, const BeadID& id)
 {
     auto parent = rootItem->findChild(id.brand);

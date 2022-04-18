@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Table>
+    <Version>1</Version>
+    <Colors>
+        <Color code="S01" name="White" red="234" green="238" blue="243" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S77" name="Ghost While" red="212" green="216" blue="211" type="Artkal" owned="2" used="5" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S78" name="Ash Grey" red="194" green="196" blue="194" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S79" name="Light Gray" red="167" green="172" blue="173" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S07" name="Gray" red="149" green="150" blue="152" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S159" name="Oslo Gray" red="130" green="135" blue="139" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S43" name="Dark Gray" red="112" green="117" blue="123" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S156" name="Steel Grey" red="90" green="95" blue="101" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S89" name="Charcoal Gray" red="86" green="90" blue="94" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S157" name="Iron Grey" red="76" green="81" blue="86" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S69" name="Mine Shaft" red="56" green="62" blue="68" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S158" name="Pepper" red="58" green="62" blue="66" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S13" name="Black" red="41" green="42" blue="43" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S93" name="Pale Skin" red="220" green="183" blue="148" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S154" name="Sahara Sand" red="227" green="192" blue="154" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S67" name="Vanilla" red="233" green="193" blue="166" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S18" name="Sand" red="220" green="163" blue="132" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S155" name="Sunkissed Teint" red="197" green="139" blue="96" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S83" name="Sienna" red="187" green="104" blue="51" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S57" name="Buccaneer" red="179" green="85" blue="64" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S15" name="Redwood" red="154" green="69" blue="65" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S85" name="Red Wine" red="153" green="50" blue="58" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S51" name="Spring Sun" red="223" green="218" blue="189" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S149" name="Creme" red="239" green="219" blue="161" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S32" name="Beeswax" red="238" green="211" blue="158" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S68" name="Tan" red="204" green="155" blue="116" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S81" name="Deer" red="191" green="145" blue="104" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S82" name="Clay" red="170" green="116" blue="78" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S47" name="Marigold" red="178" green="121" blue="56" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S17" name="Light Brown" red="137" green="93" blue="73" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S148" name="Mocha" red="122" green="89" blue="79" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S16" name="Brown" red="101" green="70" blue="61" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S52" name="Picasso" red="234" green="222" blue="127" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S29" name="Pastel Yellow" red="225" green="211" blue="103" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S14" name="Sandstorm" red="225" green="200" blue="53" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S27" name="Yellow" red="234" green="193" blue="37" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S48" name="Corn" red="236" green="192" blue="61" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S86" name="Goldenrod" red="232" green="174" blue="0" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S92" name="Dandelion" red="206" green="164" blue="51" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S90" name="Pastel Orange" red="217" green="179" blue="94" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S03" name="Tangerine" red="255" green="166" blue="48" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S39" name="Yellow Orange" red="230" green="135" blue="57" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S97" name="Papaya" red="220" green="119" blue="43" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S66" name="Blaze Orange" red="229" green="83" blue="60" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S04" name="Orange" red="235" green="96" blue="39" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S56" name="Bright Carrot" red="249" green="111" blue="64" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S50" name="Mandys Pink" red="226" green="164" blue="136" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S94" name="Warm Blush" red="221" green="146" blue="133" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S02" name="Burning Sand" red="238" green="146" blue="124" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S96" name="Apricot" red="239" green="127" blue="97" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S95" name="Salmon" red="224" green="123" blue="105" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S87" name="Coral Red" red="236" green="98" blue="94" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S84" name="Deep Chestnut" red="190" green="93" blue="101" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S130" name="Fuschia" red="214" green="102" blue="142" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S36" name="Old Pink" red="206" green="109" blue="131" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S19" name="Bubble Gun" red="242" green="191" blue="184" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S35" name="Mona Lisa" red="225" green="204" blue="210" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S127" name="Marsmallow Rose" red="223" green="195" blue="225" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S129" name="Rosebud Pink" red="213" green="166" blue="186" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S28" name="Lily Pink" red="221" green="161" blue="204" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S40" name="Carnation Pink" red="225" green="130" blue="176" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S06" name="Raspberry Pink" red="239" green="103" blue="178" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S25" name="Hot Pink" red="220" green="81" blue="154" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S26" name="Magenta" red="218" green="67" blue="131" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S132" name="Flamingo" red="223" green="72" blue="109" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S88" name="Dark Pink" red="214" green="39" blue="121" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S05" name="Tall Poppy" red="203" green="53" blue="49" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S34" name="Red" red="182" green="25" blue="39" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S58" name="Paprika" red="177" green="24" blue="54" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S146" name="Bloodrose Red" red="157" green="26" blue="56" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S38" name="Burgundy" red="163" green="19" blue="74" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S49" name="Mulberry Wood" red="146" green="30" blue="93" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S33" name="Maverick" red="192" green="183" blue="215" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S153" name="Pale Lilac" red="188" green="195" blue="225" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S152" name="Lilac" red="174" green="173" blue="220" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S131" name="Candy Violet" red="184" green="170" blue="217" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S150" name="Iris Violet" red="136" green="132" blue="208" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S60" name="Lavender" red="138" green="126" blue="194" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S128" name="Light Grape" red="211" green="142" blue="212" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S12" name="Pastel Lavender" red="145" green="101" blue="178" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S133" name="Pink Plum" red="188" green="60" blue="166" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S134" name="Amethyst" red="128" green="56" blue="151" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S23" name="Royal Purple" red="100" green="79" blue="164" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S59" name="Butterfly Bush" red="79" green="57" blue="137" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S22" name="Purple" red="72" green="51" blue="126" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S64" name="Black Rock" red="54" green="56" blue="77" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S136" name="Summer Rain" red="175" green="184" blue="223" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S135" name="Moonlight Blue" red="167" green="186" blue="225" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S137" name="Azur Blue" red="107" green="154" blue="212" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S138" name="Cornflower Blue" red="90" green="137" blue="206" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S139" name="Forget Me Not" red="101" green="138" blue="208" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S141" name="Horizon Blue" red="77" green="116" blue="198" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S140" name="Indigo" red="86" green="108" blue="189" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S142" name="Cobolt" red="65" green="109" blue="190" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S143" name="Royal Blue" red="48" green="66" blue="158" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S44" name="Sky Blue" red="167" green="205" blue="222" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S10" name="Baby Blue" red="46" green="171" blue="216" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S101" name="Electric Blue" red="0" green="167" blue="227" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S24" name="True Blue" red="0" green="120" blue="191" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S102" name="Pool Blue" red="0" green="119" blue="202" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S103" name="Caribbian Blue" red="0" green="90" blue="169" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S11" name="Dark Blue" red="0" green="79" blue="164" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S144" name="Marine" red="2" green="66" blue="136" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S54" name="Light Blue" red="0" green="132" blue="206" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S53" name="Turquoise" red="85" green="164" blue="217" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S98" name="Himalaya Blue" red="106" green="174" blue="219" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S99" name="Waterfall" red="97" green="187" blue="211" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S100" name="Lagoon" red="39" green="155" blue="190" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S73" name="Steel Blue" red="90" green="176" blue="191" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S74" name="Azure" red="0" green="158" blue="194" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S75" name="Dark Steel Blue" red="0" green="132" blue="178" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S107" name="Pond Blue" red="0" green="108" blue="159" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S106" name="Wegdewood Blue" red="0" green="100" blue="154" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S30" name="Shadow Green" red="158" green="201" blue="205" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S37" name="Blue-Green" red="96" green="191" blue="203" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S72" name="Light Sea Blue" red="104" green="196" blue="210" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S45" name="Medium Turquoise" red="0" green="165" blue="161" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S76" name="Sea Blue" red="0" green="147" blue="169" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S104" name="Deep Water" red="0" green="127" blue="158" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S105" name="Petrol Blue" red="0" green="125" blue="145" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S31" name="Sea Mist" red="178" green="215" blue="206" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S119" name="Frosty Blue" red="138" green="213" blue="201" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S120" name="Polar Mint" red="124" green="210" blue="165" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S147" name="Spearmint" red="128" green="183" blue="161" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S121" name="Celadon Green" red="114" green="172" blue="154" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S55" name="Pistachio" red="151" green="207" blue="135" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S21" name="Pastel Green" red="139" green="178" blue="58" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S123" name="Clover Field" red="62" green="183" blue="36" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S122" name="Eucalyptus" red="0" green="178" blue="111" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S20" name="Green" red="0" green="144" blue="83" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S71" name="Jade Green" red="0" green="125" blue="43" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S124" name="Pooltable Felt" red="13" green="117" blue="53" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S125" name="Snake Green" red="0" green="125" blue="110" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S62" name="Green Tea" red="0" green="118" blue="95" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S126" name="Dark Eucalyptus" red="0" green="110" blue="105" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S09" name="Dark Green" red="0" green="104" blue="94" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S145" name="Pale Yellow Moss" red="214" green="202" blue="106" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S61" name="Key Lomen Pie" red="205" green="192" blue="63" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S70" name="Drark Algae" red="173" green="173" blue="41" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S80" name="Dark Olive" red="143" green="142" blue="60" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S108" name="Seashell Beige" red="207" green="193" blue="121" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S109" name="Beige" red="196" green="174" blue="100" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S110" name="Beach Beige" red="171" green="151" blue="69" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S111" name="Caffe Latté" red="151" green="129" blue="56" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S112" name="Oaktree Brown" red="144" green="124" blue="65" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S113" name="Khaki" red="182" green="174" blue="132" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S114" name="Light Greengray" red="165" green="159" blue="101" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S115" name="Mossy Green" red="147" green="141" blue="84" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S116" name="Earth Green" red="141" green="139" blue="81" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S117" name="Sage Green" red="127" green="126" blue="73" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S118" name="Pinetree Green" red="91" green="110" blue="53" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S151" name="Forrest Green" red="52" green="86" blue="33" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S91" name="Brunswick Green" red="21" green="56" blue="56" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S65" name="Canary" red="226" green="230" blue="93" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S46" name="Bright Green" red="142" green="195" blue="36" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S08" name="Emerald" red="31" green="196" blue="103" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S41" name="Metallic Gold" red="181" green="108" blue="39" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S42" name="Metallic Silver" red="127" green="130" blue="131" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="S63" name="Metallic Copper" red="132" green="117" blue="83" type="Artkal" owned="0" used="0" enabled="false" source="PerlerVault Bead Directory"/>
+        <Color code="H01" name="white" red="236" green="237" blue="237" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H02" name="Cream" red="240" green="232" blue="185" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H03" name="yellow" red="240" green="185" blue="1" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H04" name="orange" red="230" green="79" blue="39" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H05" name="red" red="182" green="49" blue="54" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H06" name="pink" red="225" green="136" blue="159" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H07" name="purple" red="105" green="74" blue="130" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H08" name="Dark Blue (Blue)" red="44" green="70" blue="144" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H09" name="Light Blue" red="48" green="92" blue="176" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H10" name="Green" red="37" green="104" blue="71" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H11" name="light green" red="73" green="174" blue="137" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H12" name="brown" red="83" green="65" blue="55" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H13" name="transparent red" red="192" green="36" blue="53" type="Hama" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="H16" name="transparent green" red="55" green="184" blue="118" type="Hama" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="H17" name="grey" red="131" green="136" blue="138" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H18" name="black" red="46" green="47" blue="49" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H19" name="Clear" red="216" green="210" blue="206" type="Hama" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="H20" name="Reddish Brown" red="127" green="51" blue="42" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H21" name="light brown" red="165" green="105" blue="63" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H22" name="Dark Red" red="165" green="45" blue="54" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H24" name="Translucent purple" red="104" green="62" blue="154" type="Hama" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="H25" name="Translucent Brown" red="135" green="89" blue="61" type="Hama" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="H26" name="Flesh" red="222" green="155" blue="144" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H27" name="Beige" red="222" green="180" blue="139" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H28" name="Army (Dark Green)" red="54" green="63" blue="56" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H29" name="Claret" red="185" green="57" blue="94" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H30" name="burgundy" red="89" green="47" blue="56" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H31" name="Turquoise" red="103" green="151" blue="174" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H32" name="Neon Pink (Fucsia)" red="255" green="32" blue="141" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H33" name="Cerise" red="255" green="57" blue="86" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H34" name="Neon Yellow" red="229" green="239" blue="19" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H35" name="Neon Red" red="255" green="40" blue="51" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H36" name="Neon Blue" red="35" green="83" blue="176" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H37" name="Neon Green" red="6" green="183" blue="60" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H38" name="Neon Orange" red="253" green="134" blue="0" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H39" name="Fluorescent Yellow" red="241" green="242" blue="28" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H40" name="Fluorescent Orange" red="254" green="99" blue="11" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H41" name="Fluorescent Blue" red="38" green="89" blue="178" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H42" name="Fluorescent Green" red="12" green="189" blue="81" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H43" name="pastel yellow" red="240" green="234" blue="55" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H44" name="Pastel Red" red="238" green="105" blue="114" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H45" name="Pastel Purple" red="136" green="109" blue="185" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H46" name="pastel blue" red="98" green="158" blue="215" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H47" name="pastel green" red="131" green="203" blue="112" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H48" name="Pastel Pink" red="207" green="112" blue="183" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H49" name="Azure" red="73" green="152" blue="188" type="Hama" owned="0" used="0" enabled="true" source="/u/LThanda Bead List"/>
+        <Color code="H60" name="Teddybear brown" red="221" green="137" blue="1" type="Hama" owned="0" used="0" enabled="true" source="/u/PerleLarsen new Hama colours"/>
+        <Color code="H70" name="Light grey" red="154" green="161" blue="167" type="Hama" owned="0" used="0" enabled="true" source="/u/PerleLarsen new Hama colours"/>
+        <Color code="H71" name="Dark grey" red="72" green="78" blue="81" type="Hama" owned="0" used="0" enabled="true" source="/u/PerleLarsen new Hama colours"/>
+        <Color code="H75" name="Tan" red="186" green="126" blue="77" type="Hama" owned="0" used="0" enabled="true" source="/u/PerleLarsen new Hama colours"/>
+        <Color code="H76" name="Nougat" red="141" green="83" blue="36" type="Hama" owned="0" used="0" enabled="true" source="/u/PerleLarsen new Hama colours"/>
+        <Color code="H77" name="Cloudy white" red="196" green="190" blue="175" type="Hama" owned="0" used="0" enabled="true" source="/u/PerleLarsen new Hama colours"/>
+        <Color code="H78" name="Light flesh" red="229" green="166" blue="132" type="Hama" owned="0" used="0" enabled="true" source="/u/PerleLarsen new Hama colours"/>
+        <Color code="H79" name="Aprikot" red="242" green="100" blue="1" type="Hama" owned="0" used="0" enabled="true" source="/u/PerleLarsen new Hama colours"/>
+        <Color code="H82" name="Plum" red="145" green="2" blue="74" type="Hama" owned="0" used="0" enabled="true" source="/u/PerleLarsen new Hama colours"/>
+        <Color code="H83" name="Petrol blue" red="0" green="107" blue="137" type="Hama" owned="0" used="0" enabled="true" source="/u/PerleLarsen new Hama colours"/>
+        <Color code="H84" name="Olive green" red="99" green="104" blue="15" type="Hama" owned="0" used="0" enabled="true" source="/u/PerleLarsen new Hama colours"/>
+        <Color code="N01" name="Black" red="58" green="61" blue="65" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N02" name="Dark Brown" red="80" green="68" blue="59" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N03" name="Brown Medium" red="90" green="62" blue="54" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N04" name="Maroon (Wine Red)" red="129" green="53" blue="71" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N05" name="Caramel" red="167" green="98" blue="36" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N06" name="Tan (Beige)" red="173" green="150" blue="126" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N07" name="Sand (Skin)" red="238" green="177" blue="130" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N08" name="Ash (Ash Grey" red="141" green="139" blue="127" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N09" name="Hunter Green" red="47" green="74" blue="57" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N10" name="Light Grey" red="211" green="203" blue="203" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N11" name="Purple" red="100" green="69" blue="145" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N12" name="Ivory" red="226" green="208" blue="191" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N13" name="Orange (Clear Orange)" red="243" green="96" blue="27" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N14" name="Yellow" red="249" green="202" blue="0" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N15" name="White" red="244" green="244" blue="243" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N16" name="Green" red="41" green="122" blue="59" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N17" name="Bright Blue (Blue)" red="59" green="117" blue="203" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N18" name="Light Rose (Light Pink)" red="225" green="180" blue="171" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N19" name="Red (Light Red)" red="223" green="38" blue="56" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N20" name="Light Brown" red="181" green="139" blue="105" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N21" name="Lt Yellow" red="245" green="236" blue="141" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N22" name="Lime (pearl Green)" red="72" green="175" blue="79" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N23" name="Med Blue (pastel blue)" red="113" green="163" blue="230" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N24" name="Lavender" red="182" green="160" blue="219" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N25" name="Pink (old rose)" red="238" green="106" blue="151" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N26" name="Peach (Light orange)" red="252" green="168" blue="121" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N27" name="Chocolate" red="135" green="95" blue="82" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N28" name="Sky (light blue)" red="167" green="198" blue="241" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N29" name="Gold/Orange (Pearl Orange)" red="238" green="149" blue="39" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="N30" name="Kiwi (Olive)" red="199" green="191" blue="94" type="Nabbi" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P01" name="White" red="241" green="241" blue="241" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P02" name="Cream" red="224" green="222" blue="169" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P03" name="Yellow" red="236" green="216" blue="0" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P04" name="Orange" red="237" green="97" blue="32" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P05" name="Red" red="191" green="46" blue="64" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P06" name="Bubblegum" red="221" green="102" blue="155" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P07" name="Purple" red="96" green="64" blue="137" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P08" name="Dark Blue" red="43" green="63" blue="135" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P69" name="Light Blue" red="51" green="112" blue="192" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P10" name="Dark Green" red="28" green="117" blue="62" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P100" name="Pearl Coral" red="249" green="126" blue="121" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P101" name="Pearl Light Blue" red="122" green="174" blue="162" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="p102" name="Pearl Green" red="132" green="183" blue="145" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P103" name="Pearl Yellow" red="202" green="192" blue="51" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P104" name="Pearl Light Pink" red="215" green="168" blue="162" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P105" name="Silver" red="119" green="123" blue="129" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P11" name="Light Green" red="86" green="186" blue="159" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P12" name="Brown" red="81" green="57" blue="49" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P17" name="Grey" red="138" green="141" blue="145" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P18" name="Black" red="46" green="47" blue="50" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P20" name="Rust" red="140" green="55" blue="44" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P21" name="Light Brown" red="129" green="93" blue="52" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P80" name="Peach" red="238" green="186" blue="178" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P35" name="Tan" red="188" green="147" blue="113" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P38" name="Magenta" red="242" green="42" blue="123" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P47" name="Neon Yellow" red="220" green="224" blue="2" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P48" name="Neon Orange" red="255" green="119" blue="0" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P49" name="Neon Green" red="1" green="158" blue="67" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P50" name="Neon Pink" red="255" green="57" blue="145" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P52" name="Pastel Blue" red="83" green="144" blue="209" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P53" name="Pastel Green" red="118" green="200" blue="130" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P54" name="Pastel Lavender" red="138" green="114" blue="193" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P56" name="Pastel Yellow" red="254" green="248" blue="117" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P57" name="Chedder" red="241" green="170" blue="12" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P58" name="Toothpaste" red="147" green="200" blue="212" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P59" name="Hot Coral" red="255" green="56" blue="81" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P60" name="Plum" red="162" green="75" blue="156" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P61" name="Kiwi Lime" red="108" green="190" blue="19" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P62" name="Cyan" red="43" green="137" blue="198" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P63" name="Blush" red="255" green="130" blue="133" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P70" name="Periwinkle Blue" red="100" green="124" blue="190" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P75" name="Glow Green" red="190" green="198" blue="150" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P79" name="Light Pink" red="246" green="179" blue="221" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P80" name="Bright Green" red="79" green="173" blue="66" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P81" name="Light Gray" red="177" green="181" blue="178" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P179" name="Evergreen" red="53" green="83" blue="67" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P82" name="Lavender" red="173" green="152" blue="212" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P83" name="Pink" red="228" green="72" blue="146" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P85" name="Gold" red="187" green="118" blue="52" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P88" name="Raspberry" red="165" green="48" blue="97" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P90" name="Butterscotch" red="212" green="132" blue="55" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P91" name="Parrot Green" red="6" green="124" blue="129" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P92" name="Dark Grey" red="77" green="81" blue="86" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P93" name="Blueberry Cream" red="130" green="151" blue="217" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P96" name="Cranapple" red="128" green="50" blue="69" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P97" name="Prickly Pear" red="189" green="218" blue="1" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+        <Color code="P98" name="Sand" red="228" green="182" blue="144" type="Perler" owned="0" used="0" enabled="false" source="/u/LThanda Bead List"/>
+    </Colors>
+</Table>

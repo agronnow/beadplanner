@@ -39,21 +39,28 @@ CIELAB::CIELAB(QRgb color)
 
 BeadColorTable::BeadColorTable(const QString& defaultXmlFile, const QString& customXmlFile)
 {
-    loadXML(defaultXmlFile, false);
-    loadXML(customXmlFile, true);
+    loadXML(defaultXmlFile, false, false);
+    loadXML(customXmlFile, true, false);
 }
 
 //Construct table of bead colors from XML file
 //This table is a map of vectors whose keys are different bead brands
-void BeadColorTable::loadXML(const QString& xmlFileName, bool custom)
+void BeadColorTable::loadXML(const QString& xmlInfo, bool custom, bool update)
 {
-    QFile xmlFile(xmlFileName);
-    if (!xmlFile.open(QIODevice::ReadOnly | QIODevice::Text))
+    QXmlStreamReader xmlReader;
+    QFile xmlFile;
+    BeadColorMap newmap;
+    if (update) xmlReader.addData(xmlInfo);
+    else
     {
-            throw("Failed to open file "+xmlFileName);
+        xmlFile.setFileName(xmlInfo);
+        std::cout << xmlInfo.toStdString() << std::endl;
+        if (!xmlFile.open(QIODevice::ReadOnly | QIODevice::Text))
+        {
+                throw("Failed to open file "+xmlInfo);
+        }
+        xmlReader.setDevice(&xmlFile);
     }
-
-    QXmlStreamReader xmlReader(&xmlFile);
 
     //Parse the XML until we reach end of it
     while(!xmlReader.atEnd() && !xmlReader.hasError())
@@ -62,6 +69,7 @@ void BeadColorTable::loadXML(const QString& xmlFileName, bool custom)
         if (token == QXmlStreamReader::StartDocument) continue;
         if (token == QXmlStreamReader::StartElement)
         {
+            if (xmlReader.name() == "Version") {version = xmlReader.readElementText();std::cout << "read version: " << version.toStdString() << std::endl;}
             if (xmlReader.name() == "Color")
             {
                 QXmlStreamAttributes attributes = xmlReader.attributes();
@@ -71,17 +79,42 @@ void BeadColorTable::loadXML(const QString& xmlFileName, bool custom)
                     auto brand = attributes.value("type").toString().toStdString();
                     bool enabled = false;
                     if (attributes.hasAttribute("enabled")) enabled = (attributes.value("enabled").toString().toStdString() == "true");
-                    map[brand].emplace_back(BeadColor(attributes.value("code").toString().toStdString(), attributes.value("name").toString().toStdString(),
-                                                      attributes.value("source").toString().toStdString(),
-                                                      qRgb(attributes.value("red").toInt(), attributes.value("green").toInt(), attributes.value("blue").toInt()),
-                                                      enabled, custom, attributes.value("owned").toInt(), attributes.value("used").toInt()));
-                    if (custom) keysContainingCustom.emplace(brand);
-                    else keysContainingDefault.emplace(brand);
+                    if (update)
+                    {
+                        bool found = false;
+                        auto code = attributes.value("code").toString().toStdString();
+                        auto name = attributes.value("name").toString().toStdString();
+                        auto oldBrand = map.find(brand);
+                        if (oldBrand != map.end())
+                        {
+                            auto match = std::find_if(oldBrand->second.begin(), oldBrand->second.end(), [brand,code,name](BeadColor col){return (col.getCode() == code && col.getName() == name);});
+                            if (match != oldBrand->second.end())
+                            {
+                                newmap[brand].emplace_back(BeadColor(code, name, attributes.value("source").toString().toStdString(),
+                                                                  qRgb(attributes.value("red").toInt(), attributes.value("green").toInt(), attributes.value("blue").toInt()),
+                                                                  match->isEnabled(), custom, match->getOwned(), match->getUsed()));
+                                found = true;
+                            }
+                        }
+                        if (!found) newmap[brand].emplace_back(BeadColor(code, name, attributes.value("source").toString().toStdString(),
+                                                                      qRgb(attributes.value("red").toInt(), attributes.value("green").toInt(), attributes.value("blue").toInt()),
+                                                                      enabled, custom, attributes.value("owned").toInt(), attributes.value("used").toInt()));
+                    }
+                    else
+                    {
+                        map[brand].emplace_back(BeadColor(attributes.value("code").toString().toStdString(), attributes.value("name").toString().toStdString(),
+                                                          attributes.value("source").toString().toStdString(),
+                                                          qRgb(attributes.value("red").toInt(), attributes.value("green").toInt(), attributes.value("blue").toInt()),
+                                                          enabled, custom, attributes.value("owned").toInt(), attributes.value("used").toInt()));
+                    }
+                    //if (custom) keysContainingCustom.emplace(brand);
+                    //else keysContainingDefault.emplace(brand);
                }
             }
         }
     }
-    xmlFile.close();
+    if (update) map = newmap;
+    else xmlFile.close();
 
     if(xmlReader.hasError())
     {
@@ -90,7 +123,7 @@ void BeadColorTable::loadXML(const QString& xmlFileName, bool custom)
 }
 
 //Save table of bead colors to XML file
-void BeadColorTable::saveXML(const QString& xmlFileName) const
+void BeadColorTable::saveXML(const QString& xmlFileName, bool writeVersion) const
 {
     QFile xmlFile(xmlFileName);
     if (!xmlFile.open(QIODevice::WriteOnly | QIODevice::Text))
@@ -101,6 +134,9 @@ void BeadColorTable::saveXML(const QString& xmlFileName) const
     QXmlStreamWriter xmlWriter(&xmlFile);
     xmlWriter.setAutoFormatting(true);
     xmlWriter.writeStartDocument();
+    xmlWriter.writeStartElement("Table");
+    if (writeVersion) xmlWriter.writeTextElement("Version", version);
+
     xmlWriter.writeStartElement("Colors");
 
     for (const auto& cols : map)
@@ -121,6 +157,7 @@ void BeadColorTable::saveXML(const QString& xmlFileName) const
             xmlWriter.writeEndElement();
         }
     }
+    xmlWriter.writeEndElement();
     xmlWriter.writeEndElement();
     xmlWriter.writeEndDocument();
     xmlFile.close();
@@ -238,6 +275,7 @@ void BeadColorTable::stringOfMatches(QRgb pixelRGB, std::string& matches) const
 //Creates two tables containing only the default and custom bead colors
 void BeadColorTable::createSeparateTables(BeadColorTable& defaultTable, BeadColorTable& customTable) const
 {
+    defaultTable.setVersion(version);
     for (const auto& cols : map)
     {
         for (const auto& col : cols.second)
@@ -248,9 +286,10 @@ void BeadColorTable::createSeparateTables(BeadColorTable& defaultTable, BeadColo
     }
 }
 
-//Sets this table to be the union of two given tables
+//Sets this table to be the union of two given tables with the version set to that of the first table
 void BeadColorTable::mergeTables(BeadColorTable& firstTable, BeadColorTable& secondTable)
 {
+    version = firstTable.getVersion();
     map = firstTable.map;
     for (auto& col : secondTable.map)
     {
@@ -356,8 +395,8 @@ std::size_t BeadColorTable::changeKey(const BeadID& id, const std::string& newKe
     auto oldKeyVector = map.find(id.brand);
     if (oldKeyVector != map.end())
     {
-        if (oldKeyVector->second[id.idx].isCustom()) keysContainingCustom.emplace(newKey);
-        else keysContainingDefault.emplace(newKey);
+        //if (oldKeyVector->second[id.idx].isCustom()) keysContainingCustom.emplace(newKey);
+        //else keysContainingDefault.emplace(newKey);
         map[newKey].push_back(oldKeyVector->second[id.idx]); //Insert under new key
         oldKeyVector->second.erase(oldKeyVector->second.begin() + int(id.idx)); //Remove from old key
         if (oldKeyVector->second.empty()) map.erase(id.brand); //Remove old key entirely if old key vector is now empty
@@ -372,13 +411,13 @@ void BeadColorTable::remove(const BeadID& id)
     auto keyVector = map.find(id.brand);
     if (keyVector != map.end())
     {
-        bool custom = keyVector->second[id.idx].isCustom();
+        //bool custom = keyVector->second[id.idx].isCustom();
         keyVector->second.erase(keyVector->second.begin() + int(id.idx)); //Remove from old key
         if (keyVector->second.empty())
         {
             map.erase(id.brand); //Remove old key entirely if old key vector is now empty
-            if (custom) keysContainingCustom.erase(id.brand);
-            else keysContainingDefault.erase(id.brand);
+            //if (custom) keysContainingCustom.erase(id.brand);
+            //else keysContainingDefault.erase(id.brand);
         }
     }
 }
