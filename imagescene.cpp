@@ -12,6 +12,11 @@ void ImageScene::drawForeground(QPainter* painter, const QRectF& rect)
     painter->setPen(pen);
     painter->setCompositionMode(QPainter::RasterOp_NotDestination);  //Ensure that grid lines are visible against background image
 
+    //Line positions are collected across all grids and drawn once each, since drawing the same position twice under
+    //RasterOp_NotDestination inverts it back to its original colour, making coinciding lines from overlapping grids disappear
+    std::set<int> linePositionsX;
+    std::set<int> linePositionsY;
+
     for (const auto& grid: grids)
     {
         auto gridInterval = coords.beadToPixelCoord(grid.getDelta());
@@ -28,16 +33,11 @@ void ImageScene::drawForeground(QPainter* painter, const QRectF& rect)
             {
                 case (GridStyle::dashed):
                 {
-                    QVarLengthArray<QLineF, 100> linesX;
                     for (double x = left + gridOffset.x(); x < pixmapItemMain->pixmap().width(); x += gridInterval.width())
-                        linesX.append(QLineF(x, rect.top(), x, pixmapItemMain->pixmap().height()));
+                        linePositionsX.insert(int(x));
 
-                    QVarLengthArray<QLineF, 100> linesY;
                     for (double y = top + gridOffset.y(); y < pixmapItemMain->pixmap().height(); y += gridInterval.height())
-                            linesY.append(QLineF(rect.left(), y, pixmapItemMain->pixmap().width(), y));
-
-                    painter->drawLines(linesX.data(), linesX.size());
-                    painter->drawLines(linesY.data(), linesY.size());
+                        linePositionsY.insert(int(y));
                     break;
                 }
                 case (GridStyle::dots):
@@ -56,6 +56,13 @@ void ImageScene::drawForeground(QPainter* painter, const QRectF& rect)
             }
         }
     }
+
+    QVarLengthArray<QLineF, 100> linesX;
+    for (int x : linePositionsX) linesX.append(QLineF(x, rect.top(), x, pixmapItemMain->pixmap().height()));
+    QVarLengthArray<QLineF, 100> linesY;
+    for (int y : linePositionsY) linesY.append(QLineF(rect.left(), y, pixmapItemMain->pixmap().width(), y));
+    painter->drawLines(linesX.data(), linesX.size());
+    painter->drawLines(linesY.data(), linesY.size());
 
     //Dashed lines marking the border of the image
     painter->drawLine(QLineF(rect.left(), pixmapItemMain->pixmap().height(), pixmapItemMain->pixmap().width(), pixmapItemMain->pixmap().height()));

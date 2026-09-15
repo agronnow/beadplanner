@@ -1,5 +1,6 @@
 #include "griddialog.h"
 
+//The dots grid is always kept as the last element of oldGrids/tabs, all preceding elements are line grids
 GridDialog::GridDialog(QWidget *parent, std::vector<Grid>& og)
     : QDialog(parent), oldGrids{og}
 {
@@ -8,10 +9,19 @@ GridDialog::GridDialog(QWidget *parent, std::vector<Grid>& og)
     QVBoxLayout *layout = new QVBoxLayout;
 
     tabs = new QTabWidget;
+    tabs->setTabsClosable(true);
     layout->addWidget(tabs);
 
-    tabs->addTab(new GridTab(oldGrids[0]), tr("Gridlines"));
-    tabs->addTab(new GridTab(oldGrids[1]), tr("Dots"));
+    for (std::size_t i = 0; i + 1 < oldGrids.size(); ++i)
+        tabs->addTab(new GridTab(oldGrids[i]), tr("Gridlines %1").arg(i+1));
+    tabs->addTab(new GridTab(oldGrids.back()), tr("Dots"));
+    tabs->tabBar()->setTabButton(tabs->count()-1, QTabBar::RightSide, nullptr); //Dots grid cannot be removed
+
+    auto *addButtonLayout = new QHBoxLayout;
+    buttonAddGrid = new QPushButton(tr("&Add Grid"));
+    addButtonLayout->addWidget(buttonAddGrid);
+    addButtonLayout->addStretch();
+    layout->addLayout(addButtonLayout);
 
     buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 
@@ -19,28 +29,50 @@ GridDialog::GridDialog(QWidget *parent, std::vector<Grid>& og)
 
     connect(buttons, &QDialogButtonBox::accepted, this, &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, this, &QDialog::reject);
+    connect(buttonAddGrid, &QPushButton::released, this, &GridDialog::addGrid);
+    connect(tabs, &QTabWidget::tabCloseRequested, this, &GridDialog::removeGrid);
 
     setLayout(layout);
 }
 
-void GridDialog::updateGrids()
+void GridDialog::addGrid()
 {
-    for (std::size_t i = 0; i < oldGrids.size(); ++i)
-    {
-        GridTab* tab = qobject_cast<GridTab*>(tabs->widget(int(i)));
-        if (tab != nullptr)
-        {
-            oldGrids[i].setDeltaX(tab->gridIntervalXBox->value());
-            oldGrids[i].setDeltaY(tab->gridIntervalYBox->value());
-            oldGrids[i].setOffsetX(tab->gridOffsetXBox->value());
-            oldGrids[i].setOffsetY(tab->gridOffsetYBox->value());
-        }
-    }
+    int newIndex = tabs->count()-1; //Insert before the Dots tab, which stays last
+    tabs->insertTab(newIndex, new GridTab(Grid(GridStyle::dashed)), tr("Gridlines %1").arg(newIndex+1));
+    tabs->setCurrentIndex(newIndex);
 }
 
+void GridDialog::removeGrid(int index)
+{
+    if (index < 0 || index >= tabs->count()-1) return; //Cannot remove the Dots tab
+    QWidget* tab = tabs->widget(index);
+    tabs->removeTab(index);
+    delete tab;
+}
 
-GridTab::GridTab(Grid& grid, QWidget *parent)
-    : QWidget(parent)
+void GridDialog::updateGrids()
+{
+    std::vector<Grid> newGrids;
+    for (int i = 0; i < tabs->count(); ++i)
+    {
+        GridTab* tab = qobject_cast<GridTab*>(tabs->widget(i));
+        if (tab != nullptr) newGrids.push_back(tab->getGrid());
+    }
+    oldGrids = newGrids;
+}
+
+Grid GridTab::getGrid() const
+{
+    Grid g = grid;
+    g.setDeltaX(gridIntervalXBox->value());
+    g.setDeltaY(gridIntervalYBox->value());
+    g.setOffsetX(gridOffsetXBox->value());
+    g.setOffsetY(gridOffsetYBox->value());
+    return g;
+}
+
+GridTab::GridTab(const Grid& grid, QWidget *parent)
+    : QWidget(parent), grid{grid}
 {
     QHBoxLayout *layoutTopIntervalBox = new QHBoxLayout;
     QHBoxLayout *layoutBottomIntervalBox = new QHBoxLayout;

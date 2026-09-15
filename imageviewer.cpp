@@ -560,11 +560,11 @@ void ImageViewer::createActions()
 
     QMenu *viewMenu = menuBar()->addMenu(tr("&View"));
 
-    showGridAct = viewMenu->addAction(tr("Show &Grid"), scene, [this]{scene->toggleShowGrid(0);});
+    showGridAct = viewMenu->addAction(tr("Show &Grid"), scene, [this]{scene->setLineGridsVisible(showGridAct->isChecked());});
     showGridAct->setCheckable(true);
     showGridAct->setChecked(true);
     showGridAct->setEnabled(false);
-    showDotsAct = viewMenu->addAction(tr("Show &Dots"), scene, [this]{scene->toggleShowGrid(1);});
+    showDotsAct = viewMenu->addAction(tr("Show &Dots"), scene, [this]{scene->toggleShowDotsGrid();});
     showDotsAct->setCheckable(true);
     showDotsAct->setChecked(true);
     showDotsAct->setEnabled(false);

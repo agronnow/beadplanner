@@ -13,6 +13,7 @@
 #include <algorithm>
 #include <iostream>
 #include <cmath>
+#include <set>
 #include "grid.h"
 
 enum class CursorMode{normal, crop, colorPick, backgroundPick, pastePick};
@@ -25,9 +26,16 @@ public:
     void drawForeground(QPainter*, const QRectF&) override;
     void setImage(const QImage&);
     void setPasteSize(const QSize& size) {pasteSize = size;}
-    void toggleShowGrid(std::size_t idx)
+    //The dots grid is always kept as the last element of grids, all preceding elements are line grids (see GridDialog)
+    void setLineGridsVisible(bool visible)
     {
-        grids[idx].setVisible(!grids[idx].isVisible());
+        for (std::size_t i = 0; i + 1 < grids.size(); ++i) grids[i].setVisible(visible);
+        update();  //Force grid redraw
+    }
+    void toggleShowDotsGrid()
+    {
+        if (grids.empty()) return;
+        grids.back().setVisible(!grids.back().isVisible());
         update();  //Force grid redraw
     }
     BeadPixelCoordTransform& getCoords() {return coords;}
