@@ -1,4 +1,5 @@
 #include <QtWidgets>
+#include <QWheelEvent>
 #if defined(QT_PRINTSUPPORT_LIB)
 #include <QtPrintSupport/qtprintsupportglobal.h>
 #if QT_CONFIG(printdialog)
@@ -35,6 +36,7 @@ ImageViewer::ImageViewer(QWidget *parent) try
     view->setScene(scene);
     view->setAlignment( Qt::AlignLeft | Qt::AlignTop );
     view->setMouseTracking(true);
+    view->viewport()->installEventFilter(this); //Used to intercept Ctrl+wheel for zooming
     //layout->addWidget(view);
     setCentralWidget(centralWidget);
     Hlayout->setSizeConstraint(QLayout::SetMaximumSize);
@@ -455,6 +457,24 @@ void ImageViewer::pasteAt(QPoint pos)
         statusBar()->showMessage(tr("Obtained image from clipboard"));
     }
 #endif // !QT_NO_CLIPBOARD
+}
+
+bool ImageViewer::eventFilter(QObject *watched, QEvent *event)
+{
+    if ((watched == view->viewport()) && (event->type() == QEvent::Wheel))
+    {
+        auto *wheelEvent = static_cast<QWheelEvent*>(event);
+        if (wheelEvent->modifiers() & Qt::ControlModifier)
+        {
+            if (!image.isNull() && scene->hasPixmap())
+            {
+                if (wheelEvent->angleDelta().y() > 0) scaleImage(2.0, zoomMode::relative);
+                else if (wheelEvent->angleDelta().y() < 0) scaleImage(0.5, zoomMode::relative);
+            }
+            return true; //Consume the event so the view does not also scroll
+        }
+    }
+    return QMainWindow::eventFilter(watched, event);
 }
 
 void ImageViewer::closeEvent(QCloseEvent *event)

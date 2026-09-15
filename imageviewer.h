@@ -160,6 +160,7 @@ private:
     void updateSceneImage();
     void setUndoableAction(QAction*);
     bool fileModified() const {return (nActions != 0);}
+    bool eventFilter(QObject*, QEvent*) override;
 
     QThread* thread;
     Worker* worker;
