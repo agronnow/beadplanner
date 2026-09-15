@@ -58,8 +58,11 @@ QVariant TableModel::data(const QModelIndex &index, int role) const
 void TableModel::sort(int column, Qt::SortOrder order)
 {
     emit layoutAboutToBeChanged();
-    std::vector<std::size_t> newIdx(rootItem->childCount()); //Permutation vector
+    std::vector<std::size_t> newIdx(rootItem->childCount()); //Permutation vector: newIdx[k] = old row of the item now at row k
     rootItem->sortChildren(column, newIdx, beadTable, order);
+    //Invert the permutation to get, for each old row, the new row it moved to
+    std::vector<std::size_t> oldToNewRow(newIdx.size());
+    for (std::size_t k = 0; k < newIdx.size(); ++k) oldToNewRow[newIdx[k]] = k;
     //Update persistent indices according to permutation vector
     QModelIndexList from;
     QModelIndexList to;
@@ -72,7 +75,7 @@ void TableModel::sort(int column, Qt::SortOrder order)
         for (int c = 0; c < numColumns; ++c)
         {
             from.append(createIndex(i, c));
-            to.append(createIndex(newIdx[i], c));
+            to.append(createIndex(int(oldToNewRow[std::size_t(i)]), c));
         }
     }
 

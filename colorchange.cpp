@@ -54,10 +54,7 @@ void ColorChange::replaceColor(const QImage* imgOrig, QImage& imgDest)
 //Flood fill using scan line and stack based algorithm
 void ColorChange::floodFill(const QImage* imgOrig, QImage& imgDest)
 {
-    auto line = reinterpret_cast<QRgb*>(imgDest.scanLine(origin.y()));
-    const QRgb* lineCompare = imgOrig ? reinterpret_cast<const QRgb*>(imgOrig->scanLine(origin.y())) : line;
-    QRgb pixelRGB = lineCompare[origin.x()];
-    line[origin.x()] = newColor.value_or(qRgba(qRed(pixelRGB), qGreen(pixelRGB), qBlue(pixelRGB), 0));
+    QRgb* line;
 
     std::stack<Span> stack;
     stack.push({origin.x(), origin.y()});

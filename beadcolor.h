@@ -13,7 +13,8 @@ struct BeadID
 {
     bool operator<(const BeadID &rhs) const
     {
-       return ((brand <= rhs.brand) && (idx < rhs.idx));
+       if (brand != rhs.brand) return brand < rhs.brand;
+       return idx < rhs.idx;
     }
     std::string brand;
     std::size_t idx = 0;

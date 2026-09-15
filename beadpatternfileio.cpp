@@ -3,7 +3,7 @@
 int BeadPatternFileIO::load(const QString &fileName)
 {
     QFile file(fileName);
-    file.open(QIODevice::ReadOnly);
+    if (!file.open(QIODevice::ReadOnly)) throw(tr("Cannot open %1").arg(QDir::toNativeSeparators(fileName)));
     QDataStream in(&file);
     in.setByteOrder(QDataStream::LittleEndian);
     quint32 magic;
@@ -70,7 +70,7 @@ void BeadPatternFileIO::save(const QString &fileName, int pixelsPerBead)
 {
     if (image.isNull() || origColorImage.isNull()) return;
     QFile file(fileName);
-    file.open(QIODevice::WriteOnly);
+    if (!file.open(QIODevice::WriteOnly)) throw(tr("Cannot save %1").arg(QDir::toNativeSeparators(fileName)));
     QDataStream out(&file);
     out.setByteOrder(QDataStream::LittleEndian);
 

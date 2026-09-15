@@ -53,7 +53,6 @@ protected:
     virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent*) override;
 private:
     QGraphicsPixmapItem *pixmapItemMain;
-    QGraphicsPixmapItem *pixmapItemOrig;
     BeadPixelCoordTransform coords;
     std::vector<Grid> grids;
     CursorMode cursorMode = CursorMode::normal;

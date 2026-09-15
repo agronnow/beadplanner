@@ -37,9 +37,16 @@ void DefaultColorsTab::update()
         {
             if (QMessageBox::question(this, tr("Bead table update"), tr("There is a newer bead table available. Do you wish to update?")) == QMessageBox::Yes)
             {
-                beadTable.loadXML(content.toUtf8(), false, true); //Load in new default bead colors
-                beadTable.saveXML("default_colors.xml", true);
-                defaultModel->rebuild();
+                try
+                {
+                    beadTable.loadXML(content.toUtf8(), false, true); //Load in new default bead colors
+                    beadTable.saveXML("default_colors.xml", true);
+                    defaultModel->rebuild();
+                }
+                catch (const QString& errMessage)
+                {
+                    QMessageBox::warning(this, tr("Bead table update error"), errMessage, QMessageBox::Ok);
+                }
             }
         }
         else QMessageBox::information(this, tr("Bead table update"), tr("The current bead table is already up to date"));

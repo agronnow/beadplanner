@@ -86,7 +86,7 @@ ImageViewer::ImageViewer(QWidget *parent) try
     readSettings();
     updateRecentFileActions();
 }
-catch (const char* errMessage)
+catch (const QString& errMessage)
 {
     QMessageBox::critical(this, tr("Fatal error"), errMessage, QMessageBox::Ok);
 }
@@ -222,8 +222,15 @@ void ImageViewer::saveBeadPattern(const QString &fileName)
 {
     if (recolored)
     {
-        beadPattern.save(fileName, scene->getCoords().getPixelsPerBead());
-        nActions = 0;
+        try
+        {
+            beadPattern.save(fileName, scene->getCoords().getPixelsPerBead());
+            nActions = 0;
+        }
+        catch (const QString& errMessage)
+        {
+            QMessageBox::warning(this, tr("Bead pattern save error"), errMessage, QMessageBox::Ok);
+        }
     }
 }
 
@@ -803,7 +810,7 @@ void ImageViewer::pixelate()
     setUndoableAction(pixelateAct);
     auto minDimension = std::min(image.width(), image.height());
     if (minDimension < 2) return;
-    if (minDimension/factor < 2) factor = 2*minDimension;
+    if (minDimension/factor < 2) factor = std::max(minDimension/2, 1);
     zoomedImage = image.scaled(image.width()/factor,image.height()/factor, Qt::KeepAspectRatio, Qt::FastTransformation);
     image = zoomedImage;
     origColorImage = origColorImage.scaled(origColorImage.width()/factor,origColorImage.height()/factor, Qt::KeepAspectRatio, Qt::FastTransformation);
@@ -862,8 +869,15 @@ void ImageViewer::editPalette()
     {
         if (curSettings.savePalette)
         {
-            defaultTable.saveXML("default_colors.xml", true);
-            customTable.saveXML("custom_colors.xml", false);
+            try
+            {
+                defaultTable.saveXML("default_colors.xml", true);
+                customTable.saveXML("custom_colors.xml", false);
+            }
+            catch (const QString& errMessage)
+            {
+                QMessageBox::warning(this, tr("Bead palette save error"), errMessage, QMessageBox::Ok);
+            }
         }
         beadTable.mergeTables(defaultTable, customTable);
         if (recolored)

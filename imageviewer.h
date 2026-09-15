@@ -206,13 +206,11 @@ private:
     QAction *redoAct;
     QAction *copyAct;
     QAction *pasteAct;
-    QAction *setTransparentColorAct;
     QAction *replaceAct;
     QAction *flipAct;
     QAction *cropAct;
     QAction *pixelateAct;
     QAction *convertColorsAct;
-    QAction *convertColorsRedmeanAct;
     QAction *convertColorsRestoreAct;
     QAction *listBeadCountAct;
     QAction *showGridAct;

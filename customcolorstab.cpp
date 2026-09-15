@@ -35,10 +35,10 @@ CustomColorsTab::CustomColorsTab(BeadColorTable& table, const QStringList& keys,
 void CustomColorsTab::addPushed()
 {
     BeadColor newBead(true);
-    auto editDlg = new CustomColorDialog(newBead, {}, keyList, this);
-    if (editDlg->exec() == QDialog::Accepted)
+    CustomColorDialog editDlg(newBead, {}, keyList, this);
+    if (editDlg.exec() == QDialog::Accepted)
     {
-        auto newKey = editDlg->updateItem();
+        auto newKey = editDlg.updateItem();
         beadTable.insert(newKey, std::move(newBead));
         if (!keyList.contains(QString::fromStdString(newKey))) keyList.append(QString::fromStdString(newKey));
         const BeadID id({newKey, beadTable[newKey].size()-1});
@@ -53,10 +53,10 @@ void CustomColorsTab::editPushed()
     {
         BeadColorItem *item = static_cast<BeadColorItem*>(index.internalPointer());
         std::string oldKey(item->getKey());
-        auto editDlg = new CustomColorDialog(beadTable[item], oldKey, keyList, this);
-        if (editDlg->exec() == QDialog::Accepted)
+        CustomColorDialog editDlg(beadTable[item], oldKey, keyList, this);
+        if (editDlg.exec() == QDialog::Accepted)
         {
-            auto newKey = editDlg->updateItem();
+            auto newKey = editDlg.updateItem();
             if (newKey != oldKey)
             {
                 if (!keyList.contains(QString::fromStdString(newKey))) keyList.append(QString::fromStdString(newKey));
