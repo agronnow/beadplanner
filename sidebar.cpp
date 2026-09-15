@@ -1,6 +1,6 @@
 #include "sidebar.h"
 
-Sidebar::Sidebar(QWidget *parent) : QWidget(parent), pixelColorPixmap(QPixmap(48, 48)), OrigPixelColorPixmap(QPixmap(48, 48))
+Sidebar::Sidebar(QWidget *parent) : QWidget(parent), pixelColorPixmap(QPixmap(48, 48)), OrigPixelColorPixmap(QPixmap(48, 48)), BeadColorPixmap(QPixmap(48, 48))
 {
     layout = new QVBoxLayout;
     coordsLabel = new QLabel;
@@ -11,6 +11,9 @@ Sidebar::Sidebar(QWidget *parent) : QWidget(parent), pixelColorPixmap(QPixmap(48
     pixelColorMatchingBeadsLabel = new QLabel;
     OrigPixelColorImgLabel = new QLabel;
     OrigPixelColorTxtLabel = new QLabel;
+    BeadColorImgLabel = new QLabel;
+    BeadColorRGBLabel = new QLabel;
+    BeadColorTxtLabel = new QLabel;
     layout->addWidget(coordsLabel);
     currColLayout->addWidget(pixelColorImgLabel);
     currColLayout->addWidget(pixelColorTxtLabel);
@@ -23,7 +26,15 @@ Sidebar::Sidebar(QWidget *parent) : QWidget(parent), pixelColorPixmap(QPixmap(48
     origColLayout->addWidget(OrigPixelColorTxtLabel);
     origColorBox->setLayout(origColLayout);
     layout->addWidget(origColorBox);
+    beadColorBox = new QGroupBox(tr("Closest bead colour"));
+    QVBoxLayout *beadColLayout = new QVBoxLayout;
+    beadColLayout->addWidget(BeadColorImgLabel);
+    beadColLayout->addWidget(BeadColorRGBLabel);
+    beadColLayout->addWidget(BeadColorTxtLabel);
+    beadColorBox->setLayout(beadColLayout);
+    layout->addWidget(beadColorBox);
     origColorBox->setVisible(false);
+    beadColorBox->setVisible(false);
     pixelColorMatchingBeadsLabel->setVisible(false);
     layout->setAlignment(Qt::AlignTop);
     setLayout(layout);
@@ -61,6 +72,21 @@ void Sidebar::onUpdatePixelColorInfo(QRgb origPixelRGB, const std::string& match
     OrigPixelColorTxtLabel->setText(tr("RGB: %1, %2, %3").arg(qRed(origPixelRGB)).arg(qGreen(origPixelRGB)).arg(qBlue(origPixelRGB)));
 }
 
+void Sidebar::onUpdateBeadColorInfo(QRgb beadRGB, const std::string& beadName)
+{
+    auto painter = new QPainter;
+    painter->begin(&BeadColorPixmap);
+    painter->fillRect(1,1,46,46,beadRGB);
+    painter->setPen(Qt::black);
+    painter->drawRect(0,0,47,47);
+    painter->end();
+    delete painter;
+
+    BeadColorImgLabel->setPixmap(BeadColorPixmap);
+    BeadColorRGBLabel->setText(tr("RGB: %1, %2, %3").arg(qRed(beadRGB)).arg(qGreen(beadRGB)).arg(qBlue(beadRGB)));
+    BeadColorTxtLabel->setText(QString::fromStdString(beadName));
+}
+
 void Sidebar::onClearInfo()
 {
     coordsLabel->clear();
@@ -69,4 +95,7 @@ void Sidebar::onClearInfo()
     pixelColorMatchingBeadsLabel->clear();
     OrigPixelColorImgLabel->clear();
     OrigPixelColorTxtLabel->clear();
+    BeadColorImgLabel->clear();
+    BeadColorRGBLabel->clear();
+    BeadColorTxtLabel->clear();
 }

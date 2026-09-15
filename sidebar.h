@@ -19,6 +19,7 @@ public:
         origColorBox->setVisible(vis);
         pixelColorMatchingBeadsLabel->setVisible(vis);
     }
+    void setBeadColorInfoVisible(bool vis) {beadColorBox->setVisible(vis);}
 
 signals:
     void findMatchingBeadColors(std::string&, QRgb);
@@ -27,6 +28,7 @@ public slots:
     void onCoordsChanged(QPoint, QPoint, QRgb);
     void onClearInfo();
     void onUpdatePixelColorInfo(QRgb, const std::string&);
+    void onUpdateBeadColorInfo(QRgb, const std::string&);
 
 private:
     QLabel *pixelColorImgLabel;
@@ -38,6 +40,11 @@ private:
     QPixmap OrigPixelColorPixmap;
     QLabel *OrigPixelColorImgLabel;
     QLabel *OrigPixelColorTxtLabel;
+    QGroupBox *beadColorBox;
+    QPixmap BeadColorPixmap;
+    QLabel *BeadColorImgLabel;
+    QLabel *BeadColorRGBLabel;
+    QLabel *BeadColorTxtLabel;
     QVBoxLayout *layout;
 };
 

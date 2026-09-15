@@ -105,6 +105,7 @@ public:
 signals:
     void enterCursorSelectionMode(CursorMode);
     void updatePixelColorInfo(QRgb, const std::string&);
+    void updateBeadColorInfo(QRgb, const std::string&);
 
 private slots:
     void open();
@@ -135,6 +136,7 @@ private slots:
     void crop(QRect&);
     void onExitCursorSelectionMode();
     void onCoordsChanged(QPoint, QPoint, QRgb);
+    void onOriginalTabCoordsChanged(QPoint, QPoint, QRgb);
     void onColorPickerClick(QPoint, QPoint);
     void setTransparency(QPoint, QRgb);
     void updateTransparency(ColorChange&, bool);

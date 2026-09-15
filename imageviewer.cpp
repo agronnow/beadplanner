@@ -70,6 +70,8 @@ ImageViewer::ImageViewer(QWidget *parent) try
     connect(scene, &ImageScene::coordsChanged, pixelInfo, &Sidebar::onCoordsChanged);
     connect(this, &ImageViewer::updatePixelColorInfo, pixelInfo, &Sidebar::onUpdatePixelColorInfo);
     connect(scene, &ImageScene::clearColorInfo, pixelInfo, &Sidebar::onClearInfo);
+    connect(scene, &ImageScene::coordsChanged, this, &ImageViewer::onOriginalTabCoordsChanged);
+    connect(this, &ImageViewer::updateBeadColorInfo, pixelInfo, &Sidebar::onUpdateBeadColorInfo);
 
     connect(imageTabs, &QTabBar::currentChanged, this, &ImageViewer::onTabChanged);
 
@@ -763,6 +765,18 @@ void ImageViewer::onCoordsChanged(QPoint pixelCoords, QPoint beadCoords, QRgb pi
     emit updatePixelColorInfo(origRGB, matches);
 }
 
+void ImageViewer::onOriginalTabCoordsChanged(QPoint pixelCoords, QPoint beadCoords, QRgb pixelRGB)
+{
+    Q_UNUSED(pixelCoords)
+    Q_UNUSED(beadCoords)
+    if (imageTabs->currentIndex() != 0) return;
+    BeadID matchID;
+    beadTable.findClosestColor(pixelRGB, matchID);
+    if (matchID.brand.empty()) return; //No enabled bead colours to match against
+    const BeadColor& match = beadTable[matchID];
+    emit updateBeadColorInfo(match.getRGB(), matchID.brand + ": " + match.getName());
+}
+
 void ImageViewer::startCursorSelectionMode(CursorMode mode, const QString& message)
 {
     Q_ASSERT(!image.isNull() && scene->hasPixmap());
@@ -1005,6 +1019,7 @@ void ImageViewer::setRecolored(bool recolor)
 {
     recolored = recolor;
     pixelInfo->setOrigColorInfoVisible(recolor);
+    pixelInfo->setBeadColorInfoVisible(!recolor); //recolor==false always leaves the Original colours tab active (see below)
     listBeadCountAct->setEnabled(recolor);
     imageTabs->setTabEnabled(1, recolor);
     if (recolor)
@@ -1062,6 +1077,7 @@ void ImageViewer::onTabChanged(int newIdx)
         disconnect(scene, &ImageScene::coordsChanged, this, &ImageViewer::onCoordsChanged);
         replaceAct->setEnabled(false);
         pixelInfo->setOrigColorInfoVisible(false);
+        pixelInfo->setBeadColorInfoVisible(true);
         pasteAct->setEnabled(false);
     }
     else if ((recolored) && (!image.isNull()))
@@ -1069,6 +1085,7 @@ void ImageViewer::onTabChanged(int newIdx)
         connect(scene, &ImageScene::coordsChanged, this, &ImageViewer::onCoordsChanged);
         replaceAct->setEnabled(true);
         pixelInfo->setOrigColorInfoVisible(true);
+        pixelInfo->setBeadColorInfoVisible(false);
         pasteAct->setEnabled(true);
     }
     updateSceneImage();
