@@ -16,6 +16,8 @@
 #include <set>
 #include "grid.h"
 
+class QTimer;
+
 enum class CursorMode{normal, crop, colorPick, backgroundPick, pastePick};
 enum class CropHandle{none, topLeft, top, topRight, right, bottomRight, bottom, bottomLeft, left, inside};
 
@@ -40,6 +42,8 @@ public:
         update();  //Force grid redraw
     }
     BeadPixelCoordTransform& getCoords() {return coords;}
+    //Keeps a pending/in-progress crop selection aligned with the same image region after the zoom level changes
+    void rescaleCropSelection(double oldScaleFactor, double newScaleFactor);
     QSize getScaledImageSize(const QSize& s) const {return coords.nonzeroSize(s*coords.getScaleFactor());}
     std::vector<Grid>& getGrid() {return grids;}
     bool hasPixmap() const {return (pixmapItemMain != nullptr);}
@@ -63,8 +67,21 @@ protected:
     virtual void mouseMoveEvent(QGraphicsSceneMouseEvent*) override;
     virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent*) override;
     virtual void mouseDoubleClickEvent(QGraphicsSceneMouseEvent*) override;
+private slots:
+    void onViewScrolled();
+    void onAutoScrollTimeout();
+
 private:
     CropHandle hitTestCropHandle(const QPoint&, const QRect&) const;
+    void ensureRubberBand();
+    //Rubber band geometry is in viewport widget coordinates while all other selection state (cropRect, origin, etc.)
+    //is kept in scene coordinates, which only coincide with viewport coordinates when the view is unscrolled
+    QRect viewRectFromScene(const QRect&) const;
+    //Recomputes cropRect (and the rubber band) for the drag in progress, given the current pointer position in scene coordinates
+    void updateCropDrag(const QPointF&);
+    //Starts/stops auto-scrolling the view when the given scene position is near or past the viewport edge during a crop drag
+    void updateAutoScroll(const QPointF&);
+    void stopAutoScroll();
 
     QGraphicsPixmapItem *pixmapItemMain;
     BeadPixelCoordTransform coords;
@@ -84,6 +101,13 @@ private:
     QPoint dragStartPos;
     QRect dragStartRect;
     static constexpr int cropHandleMargin = 6;
+
+    //Auto-scrolling the view while dragging a crop selection near/past the viewport edge
+    QTimer *autoScrollTimer = nullptr;
+    QPoint autoScrollSpeed;
+    static constexpr int autoScrollMargin = 30;
+    static constexpr int autoScrollMaxSpeed = 25;
+    static constexpr int autoScrollInterval = 16;
 };
 
 #endif // IMAGESCENE_H

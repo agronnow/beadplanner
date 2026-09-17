@@ -746,8 +746,10 @@ void ImageViewer::scaleImage(double factor, zoomMode zoom)
     auto it = std::min_element(zoomFactors.begin(), zoomFactors.end(), [uncorrectedFactor] (double a, double b)
     {return std::abs(uncorrectedFactor - a) < std::abs(uncorrectedFactor - b);});
     newScaleFactor = *it;
+    const double oldScaleFactor = scene->getCoords().getScaleFactor();
     scene->getCoords().setScaleFactor(newScaleFactor);
     updateSceneImage();
+    scene->rescaleCropSelection(oldScaleFactor, newScaleFactor);
     const QString zoomMessage = tr("Zoom: %1x").arg(newScaleFactor);
     zoomText->setText(zoomMessage);
 

@@ -1,4 +1,7 @@
 #include "imagescene.h"
+#include <QScrollBar>
+#include <QTimer>
+#include <QCursor>
 
 ImageScene::ImageScene(QObject* parent) : QGraphicsScene(parent), pixmapItemMain{nullptr}, coords{},
     grids({GridStyle::dashed, GridStyle::dots})
@@ -101,9 +104,10 @@ void ImageScene::mousePressEvent(QGraphicsSceneMouseEvent* event)
                 activeHandle = CropHandle::none;
 
                 // Create a selection square
-                if (!rubberBand) rubberBand = new QRubberBand(QRubberBand::Rectangle, views()[0]);
+                ensureRubberBand();
                 origin = coords.snapToBeadCoord(event->scenePos());
-                rubberBand->setGeometry(QRect(origin, QSize()));
+                cropRect = QRect(origin, QSize());
+                rubberBand->setGeometry(viewRectFromScene(cropRect));
                 rubberBand->show();
                 break;
             }
@@ -142,50 +146,8 @@ void ImageScene::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     {
         if (leftMouseButtonPressed)
         {
-            auto curPos = coords.snapToBeadCoord(event->scenePos());
-            if (curPos.x() > pixmapItemMain->pixmap().width()) curPos.setX(pixmapItemMain->pixmap().width());
-            if (curPos.y() > pixmapItemMain->pixmap().height()) curPos.setY(pixmapItemMain->pixmap().height());
-            if (curPos.x() < 0) curPos.setX(0);
-            if (curPos.y() < 0) curPos.setY(0);
-
-            if (activeHandle == CropHandle::none)
-            {
-                // Form the selection area when drawing a brand new selection with the mouse while pressing the LMB
-                QRect newRect(QRect(origin, curPos).normalized());
-                if (newRect.x() < 0) newRect.setX(0);
-                if (newRect.y() < 0) newRect.setY(0);
-                rubberBand->setGeometry(newRect);
-            }
-            else if (activeHandle == CropHandle::inside)
-            {
-                // Move the whole pending selection, keeping it within the image bounds
-                QRect moved = dragStartRect.translated(curPos - dragStartPos);
-                if (moved.left() < 0) moved.moveLeft(0);
-                if (moved.top() < 0) moved.moveTop(0);
-                if (moved.right() > pixmapItemMain->pixmap().width()) moved.moveRight(pixmapItemMain->pixmap().width());
-                if (moved.bottom() > pixmapItemMain->pixmap().height()) moved.moveBottom(pixmapItemMain->pixmap().height());
-                cropRect = moved;
-                rubberBand->setGeometry(cropRect);
-            }
-            else
-            {
-                // Resize the pending selection by dragging one of its handles
-                QRect resized = dragStartRect;
-                switch (activeHandle)
-                {
-                    case CropHandle::topLeft: resized.setTopLeft(curPos); break;
-                    case CropHandle::top: resized.setTop(curPos.y()); break;
-                    case CropHandle::topRight: resized.setTopRight(curPos); break;
-                    case CropHandle::right: resized.setRight(curPos.x()); break;
-                    case CropHandle::bottomRight: resized.setBottomRight(curPos); break;
-                    case CropHandle::bottom: resized.setBottom(curPos.y()); break;
-                    case CropHandle::bottomLeft: resized.setBottomLeft(curPos); break;
-                    case CropHandle::left: resized.setLeft(curPos.x()); break;
-                    default: break;
-                }
-                cropRect = resized.normalized();
-                rubberBand->setGeometry(cropRect);
-            }
+            updateCropDrag(event->scenePos());
+            updateAutoScroll(event->scenePos());
         }
         else if (cropSelectionActive)
         {
@@ -220,14 +182,14 @@ void ImageScene::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
         }
         if (cursorMode == CursorMode::pastePick)
         {
-            if (!rubberBand) rubberBand = new QRubberBand(QRubberBand::Rectangle, views()[0]);
+            ensureRubberBand();
             auto curPos = coords.snapToBeadCoord(event->scenePos());
             if (curPos.x() > pixmapItemMain->pixmap().width()) curPos.setX(pixmapItemMain->pixmap().width());
             if (curPos.y() > pixmapItemMain->pixmap().height()) curPos.setY(pixmapItemMain->pixmap().height());
             QRect pasteRect(QRect(curPos, coords.beadToPixelCoord(pasteSize)).normalized());
             if (pasteRect.x() < 0) pasteRect.setX(0);
             if (pasteRect.y() < 0) pasteRect.setY(0);
-            rubberBand->setGeometry(pasteRect);
+            rubberBand->setGeometry(viewRectFromScene(pasteRect));
             rubberBand->show();
         }
     }
@@ -242,12 +204,12 @@ void ImageScene::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
         if (cursorMode == CursorMode::crop)
         {
             leftMouseButtonPressed = false;
+            stopAutoScroll();
 
             // When releasing the LMB, the selection area becomes pending: the user can still
             // move or resize it before confirming the crop (Enter/double-click) or cancelling it (Esc/right click)
             if (rubberBand->isVisible())
             {
-                if (activeHandle == CropHandle::none) cropRect = rubberBand->geometry();
                 const double scaleFactor = coords.getScaleFactor();
                 if ((std::floor(cropRect.width()/scaleFactor) > 1.0) && (std::floor(cropRect.height()/scaleFactor) > 1.0))
                 {
@@ -325,8 +287,181 @@ void ImageScene::cancelCursorSelection()
     cropSelectionActive = false;
     activeHandle = CropHandle::none;
     leftMouseButtonPressed = false;
+    stopAutoScroll();
     if (rubberBand) rubberBand->hide();
     emit exitCursorSelectionMode();
+}
+
+void ImageScene::rescaleCropSelection(double oldScaleFactor, double newScaleFactor)
+{
+    if ((cursorMode != CursorMode::crop) || (!cropSelectionActive && !leftMouseButtonPressed)) return;
+    if ((oldScaleFactor <= 0.0) || (newScaleFactor <= 0.0) || (oldScaleFactor == newScaleFactor)) return;
+
+    // Convert through bead coordinates (scale-independent) rather than scaling pixel coordinates directly,
+    // so the selection stays exactly aligned to the same beads instead of drifting from rounding error
+    const double oldUnit = coords.getPixelsPerBead()*oldScaleFactor;
+    const double newUnit = coords.getPixelsPerBead()*newScaleFactor;
+    auto rescalePoint = [oldUnit, newUnit](const QPoint& p)
+    {
+        return QPoint(int(int(p.x()/oldUnit)*newUnit), int(int(p.y()/oldUnit)*newUnit));
+    };
+    auto rescaleRect = [&rescalePoint](const QRect& r) {return QRect(rescalePoint(r.topLeft()), rescalePoint(r.bottomRight()));};
+
+    cropRect = rescaleRect(cropRect);
+    origin = rescalePoint(origin);
+    dragStartRect = rescaleRect(dragStartRect);
+    dragStartPos = rescalePoint(dragStartPos);
+
+    if (pixmapItemMain)
+    {
+        const int maxWidth = pixmapItemMain->pixmap().width();
+        const int maxHeight = pixmapItemMain->pixmap().height();
+        if (cropRect.right() > maxWidth) cropRect.moveRight(maxWidth);
+        if (cropRect.bottom() > maxHeight) cropRect.moveBottom(maxHeight);
+        if (cropRect.left() < 0) cropRect.moveLeft(0);
+        if (cropRect.top() < 0) cropRect.moveTop(0);
+    }
+
+    if (rubberBand && rubberBand->isVisible()) rubberBand->setGeometry(viewRectFromScene(cropRect));
+}
+
+void ImageScene::ensureRubberBand()
+{
+    if (rubberBand) return;
+    QGraphicsView* view = views()[0];
+    rubberBand = new QRubberBand(QRubberBand::Rectangle, view->viewport());
+    // The rubber band is a plain widget and does not follow the view when it is panned/scrolled,
+    // so its geometry must be recomputed from scene coordinates whenever the scroll position changes
+    connect(view->horizontalScrollBar(), &QScrollBar::valueChanged, this, &ImageScene::onViewScrolled, Qt::UniqueConnection);
+    connect(view->verticalScrollBar(), &QScrollBar::valueChanged, this, &ImageScene::onViewScrolled, Qt::UniqueConnection);
+}
+
+QRect ImageScene::viewRectFromScene(const QRect& sceneRect) const
+{
+    QGraphicsView* view = views()[0];
+    return QRect(view->mapFromScene(sceneRect.topLeft()), view->mapFromScene(sceneRect.bottomRight()));
+}
+
+void ImageScene::onViewScrolled()
+{
+    if (!rubberBand || !rubberBand->isVisible()) return;
+    if ((cursorMode == CursorMode::crop) && (cropSelectionActive || leftMouseButtonPressed))
+    {
+        rubberBand->setGeometry(viewRectFromScene(cropRect));
+    }
+}
+
+void ImageScene::updateCropDrag(const QPointF& scenePos)
+{
+    if (!pixmapItemMain || !rubberBand) return;
+
+    auto curPos = coords.snapToBeadCoord(scenePos);
+    if (curPos.x() > pixmapItemMain->pixmap().width()) curPos.setX(pixmapItemMain->pixmap().width());
+    if (curPos.y() > pixmapItemMain->pixmap().height()) curPos.setY(pixmapItemMain->pixmap().height());
+    if (curPos.x() < 0) curPos.setX(0);
+    if (curPos.y() < 0) curPos.setY(0);
+
+    if (activeHandle == CropHandle::none)
+    {
+        // Form the selection area when drawing a brand new selection with the mouse while pressing the LMB
+        QRect newRect(QRect(origin, curPos).normalized());
+        if (newRect.x() < 0) newRect.setX(0);
+        if (newRect.y() < 0) newRect.setY(0);
+        cropRect = newRect;
+    }
+    else if (activeHandle == CropHandle::inside)
+    {
+        // Move the whole pending selection, keeping it within the image bounds
+        QRect moved = dragStartRect.translated(curPos - dragStartPos);
+        if (moved.left() < 0) moved.moveLeft(0);
+        if (moved.top() < 0) moved.moveTop(0);
+        if (moved.right() > pixmapItemMain->pixmap().width()) moved.moveRight(pixmapItemMain->pixmap().width());
+        if (moved.bottom() > pixmapItemMain->pixmap().height()) moved.moveBottom(pixmapItemMain->pixmap().height());
+        cropRect = moved;
+    }
+    else
+    {
+        // Resize the pending selection by dragging one of its handles
+        QRect resized = dragStartRect;
+        switch (activeHandle)
+        {
+            case CropHandle::topLeft: resized.setTopLeft(curPos); break;
+            case CropHandle::top: resized.setTop(curPos.y()); break;
+            case CropHandle::topRight: resized.setTopRight(curPos); break;
+            case CropHandle::right: resized.setRight(curPos.x()); break;
+            case CropHandle::bottomRight: resized.setBottomRight(curPos); break;
+            case CropHandle::bottom: resized.setBottom(curPos.y()); break;
+            case CropHandle::bottomLeft: resized.setBottomLeft(curPos); break;
+            case CropHandle::left: resized.setLeft(curPos.x()); break;
+            default: break;
+        }
+        cropRect = resized.normalized();
+    }
+    rubberBand->setGeometry(viewRectFromScene(cropRect));
+}
+
+void ImageScene::updateAutoScroll(const QPointF& scenePos)
+{
+    QGraphicsView* view = views()[0];
+    const QPoint viewportPos = view->mapFromScene(scenePos);
+    const QRect vpRect = view->viewport()->rect();
+
+    auto edgeSpeed = [](int pos, int nearMin, int nearMax) -> int
+    {
+        if (pos < nearMin) return -std::min(autoScrollMaxSpeed, (nearMin - pos)/2 + 4);
+        if (pos > nearMax) return std::min(autoScrollMaxSpeed, (pos - nearMax)/2 + 4);
+        return 0;
+    };
+
+    autoScrollSpeed.setX(edgeSpeed(viewportPos.x(), vpRect.left() + autoScrollMargin, vpRect.right() - autoScrollMargin));
+    autoScrollSpeed.setY(edgeSpeed(viewportPos.y(), vpRect.top() + autoScrollMargin, vpRect.bottom() - autoScrollMargin));
+
+    if (autoScrollSpeed.isNull())
+    {
+        stopAutoScroll();
+        return;
+    }
+    if (!autoScrollTimer)
+    {
+        autoScrollTimer = new QTimer(this);
+        connect(autoScrollTimer, &QTimer::timeout, this, &ImageScene::onAutoScrollTimeout);
+    }
+    if (!autoScrollTimer->isActive()) autoScrollTimer->start(autoScrollInterval);
+}
+
+void ImageScene::stopAutoScroll()
+{
+    autoScrollSpeed = QPoint();
+    if (autoScrollTimer) autoScrollTimer->stop();
+}
+
+void ImageScene::onAutoScrollTimeout()
+{
+    if ((cursorMode != CursorMode::crop) || !leftMouseButtonPressed)
+    {
+        stopAutoScroll();
+        return;
+    }
+
+    QGraphicsView* view = views()[0];
+    QScrollBar* hBar = view->horizontalScrollBar();
+    QScrollBar* vBar = view->verticalScrollBar();
+    hBar->setValue(hBar->value() + autoScrollSpeed.x());
+    vBar->setValue(vBar->value() + autoScrollSpeed.y());
+
+    // The mouse may not have moved at all (the view is scrolling underneath a stationary cursor),
+    // so re-derive its current scene position rather than relying on the last mouse move event
+    const QPoint viewportPos = view->viewport()->mapFromGlobal(QCursor::pos());
+    updateCropDrag(view->mapToScene(viewportPos));
+
+    // Stop scrolling in any direction where the scrollbar has reached its limit
+    if (((autoScrollSpeed.x() > 0) && (hBar->value() >= hBar->maximum())) ||
+        ((autoScrollSpeed.x() < 0) && (hBar->value() <= hBar->minimum())))
+        autoScrollSpeed.setX(0);
+    if (((autoScrollSpeed.y() > 0) && (vBar->value() >= vBar->maximum())) ||
+        ((autoScrollSpeed.y() < 0) && (vBar->value() <= vBar->minimum())))
+        autoScrollSpeed.setY(0);
+    if (autoScrollSpeed.isNull()) stopAutoScroll();
 }
 
 void ImageScene::setImage(const QImage& image)
