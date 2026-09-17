@@ -561,8 +561,18 @@ void ImageViewer::createActions()
     replaceAct = editMenu->addAction(tr("View/Replace Bead Colours"), this, [this]{ImageViewer::startCursorSelectionMode(CursorMode::colorPick, tr("Left click to select a bead, right click to cancel"));});
     replaceAct->setEnabled(false);
 
-    cropAct = editMenu->addAction(tr("Crop"), this, [this]{ImageViewer::startCursorSelectionMode(CursorMode::crop, tr("Left click and drag to select crop area, right click to cancel"));});
+    cropAct = editMenu->addAction(tr("Crop"), this, [this]{ImageViewer::startCursorSelectionMode(CursorMode::crop, tr("Left click and drag to select crop area, then drag its edges to adjust; press Enter or double click inside it to crop, right click or Esc to cancel"));});
     cropAct->setEnabled(false);
+
+    QAction *confirmCropAct = new QAction(this);
+    confirmCropAct->setShortcuts({QKeySequence(Qt::Key_Return), QKeySequence(Qt::Key_Enter)});
+    connect(confirmCropAct, &QAction::triggered, scene, &ImageScene::confirmCropSelection);
+    addAction(confirmCropAct);
+
+    QAction *cancelSelectionAct = new QAction(this);
+    cancelSelectionAct->setShortcut(Qt::Key_Escape);
+    connect(cancelSelectionAct, &QAction::triggered, scene, &ImageScene::cancelCursorSelection);
+    addAction(cancelSelectionAct);
 
     editMenu->addSeparator();
 

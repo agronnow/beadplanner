@@ -17,6 +17,7 @@
 #include "grid.h"
 
 enum class CursorMode{normal, crop, colorPick, backgroundPick, pastePick};
+enum class CropHandle{none, topLeft, top, topRight, right, bottomRight, bottom, bottomLeft, left, inside};
 
 class ImageScene : public QGraphicsScene
 {
@@ -54,12 +55,17 @@ signals:
 
 public slots:
     void onEnterCursorSelectionMode(CursorMode mode) {cursorMode = mode;}
+    void confirmCropSelection();
+    void cancelCursorSelection();
 
 protected:
     virtual void mousePressEvent(QGraphicsSceneMouseEvent*) override;
     virtual void mouseMoveEvent(QGraphicsSceneMouseEvent*) override;
     virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent*) override;
+    virtual void mouseDoubleClickEvent(QGraphicsSceneMouseEvent*) override;
 private:
+    CropHandle hitTestCropHandle(const QPoint&, const QRect&) const;
+
     QGraphicsPixmapItem *pixmapItemMain;
     BeadPixelCoordTransform coords;
     std::vector<Grid> grids;
@@ -70,6 +76,14 @@ private:
     QRubberBand *rubberBand = nullptr;
     QPoint origin;
     bool leftMouseButtonPressed = false;
+
+    //State for adjusting a crop selection after the initial drag has been released, but before it is confirmed
+    QRect cropRect;
+    bool cropSelectionActive = false;
+    CropHandle activeHandle = CropHandle::none;
+    QPoint dragStartPos;
+    QRect dragStartRect;
+    static constexpr int cropHandleMargin = 6;
 };
 
 #endif // IMAGESCENE_H

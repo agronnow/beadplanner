@@ -77,8 +77,28 @@ void ImageScene::mousePressEvent(QGraphicsSceneMouseEvent* event)
         {
             case CursorMode::crop:
             {
+                QPoint pos = event->scenePos().toPoint();
+
+                // If a selection is already pending, check whether the click grabs a resize handle
+                // or the inside of the selection (to move it) instead of starting a brand new one
+                if (cropSelectionActive)
+                {
+                    activeHandle = hitTestCropHandle(pos, cropRect);
+                    if (activeHandle != CropHandle::none)
+                    {
+                        leftMouseButtonPressed = true;
+                        // Snap to the same bead-aligned grid as the drag position computed in mouseMoveEvent,
+                        // otherwise the delta between them drifts the selection off the pixel grid
+                        dragStartPos = coords.snapToBeadCoord(event->scenePos());
+                        dragStartRect = cropRect;
+                        break;
+                    }
+                }
+
                 // With the left mouse button pressed, remember the position
                 leftMouseButtonPressed = true;
+                cropSelectionActive = false;
+                activeHandle = CropHandle::none;
 
                 // Create a selection square
                 if (!rubberBand) rubberBand = new QRubberBand(QRubberBand::Rectangle, views()[0]);
@@ -109,9 +129,7 @@ void ImageScene::mousePressEvent(QGraphicsSceneMouseEvent* event)
     }
     else if ((event->button() & Qt::RightButton) && (cursorMode != CursorMode::normal))
     {
-        cursorMode = CursorMode::normal;
-        if (rubberBand) rubberBand->hide();
-        emit exitCursorSelectionMode();
+        cancelCursorSelection();
     }
 
     QGraphicsScene::mousePressEvent(event);
@@ -120,16 +138,73 @@ void ImageScene::mousePressEvent(QGraphicsSceneMouseEvent* event)
 void ImageScene::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 {
     if (pixmapItemMain == nullptr) return;
-    if (leftMouseButtonPressed && (cursorMode == CursorMode::crop))
+    if (cursorMode == CursorMode::crop)
     {
-        // Form the selection area when moving with the mouse while pressing the LMB
-        auto curPos = coords.snapToBeadCoord(event->scenePos());
-        if (curPos.x() > pixmapItemMain->pixmap().width()) curPos.setX(pixmapItemMain->pixmap().width());
-        if (curPos.y() > pixmapItemMain->pixmap().height()) curPos.setY(pixmapItemMain->pixmap().height());
-        QRect cropRect(QRect(origin, curPos).normalized());
-        if (cropRect.x() < 0) cropRect.setX(0);
-        if (cropRect.y() < 0) cropRect.setY(0);
-        rubberBand->setGeometry(cropRect);
+        if (leftMouseButtonPressed)
+        {
+            auto curPos = coords.snapToBeadCoord(event->scenePos());
+            if (curPos.x() > pixmapItemMain->pixmap().width()) curPos.setX(pixmapItemMain->pixmap().width());
+            if (curPos.y() > pixmapItemMain->pixmap().height()) curPos.setY(pixmapItemMain->pixmap().height());
+            if (curPos.x() < 0) curPos.setX(0);
+            if (curPos.y() < 0) curPos.setY(0);
+
+            if (activeHandle == CropHandle::none)
+            {
+                // Form the selection area when drawing a brand new selection with the mouse while pressing the LMB
+                QRect newRect(QRect(origin, curPos).normalized());
+                if (newRect.x() < 0) newRect.setX(0);
+                if (newRect.y() < 0) newRect.setY(0);
+                rubberBand->setGeometry(newRect);
+            }
+            else if (activeHandle == CropHandle::inside)
+            {
+                // Move the whole pending selection, keeping it within the image bounds
+                QRect moved = dragStartRect.translated(curPos - dragStartPos);
+                if (moved.left() < 0) moved.moveLeft(0);
+                if (moved.top() < 0) moved.moveTop(0);
+                if (moved.right() > pixmapItemMain->pixmap().width()) moved.moveRight(pixmapItemMain->pixmap().width());
+                if (moved.bottom() > pixmapItemMain->pixmap().height()) moved.moveBottom(pixmapItemMain->pixmap().height());
+                cropRect = moved;
+                rubberBand->setGeometry(cropRect);
+            }
+            else
+            {
+                // Resize the pending selection by dragging one of its handles
+                QRect resized = dragStartRect;
+                switch (activeHandle)
+                {
+                    case CropHandle::topLeft: resized.setTopLeft(curPos); break;
+                    case CropHandle::top: resized.setTop(curPos.y()); break;
+                    case CropHandle::topRight: resized.setTopRight(curPos); break;
+                    case CropHandle::right: resized.setRight(curPos.x()); break;
+                    case CropHandle::bottomRight: resized.setBottomRight(curPos); break;
+                    case CropHandle::bottom: resized.setBottom(curPos.y()); break;
+                    case CropHandle::bottomLeft: resized.setBottomLeft(curPos); break;
+                    case CropHandle::left: resized.setLeft(curPos.x()); break;
+                    default: break;
+                }
+                cropRect = resized.normalized();
+                rubberBand->setGeometry(cropRect);
+            }
+        }
+        else if (cropSelectionActive)
+        {
+            // Not dragging: show an appropriate cursor when hovering over the selection or a resize handle
+            QPoint pos = event->scenePos().toPoint();
+            switch (hitTestCropHandle(pos, cropRect))
+            {
+                case CropHandle::topLeft:
+                case CropHandle::bottomRight: views()[0]->setCursor(Qt::SizeFDiagCursor); break;
+                case CropHandle::topRight:
+                case CropHandle::bottomLeft: views()[0]->setCursor(Qt::SizeBDiagCursor); break;
+                case CropHandle::left:
+                case CropHandle::right: views()[0]->setCursor(Qt::SizeHorCursor); break;
+                case CropHandle::top:
+                case CropHandle::bottom: views()[0]->setCursor(Qt::SizeVerCursor); break;
+                case CropHandle::inside: views()[0]->setCursor(Qt::SizeAllCursor); break;
+                default: views()[0]->setCursor(Qt::CrossCursor); break;
+            }
+        }
     }
     auto x = event->scenePos().x();
     auto y = event->scenePos().y();
@@ -149,10 +224,10 @@ void ImageScene::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
             auto curPos = coords.snapToBeadCoord(event->scenePos());
             if (curPos.x() > pixmapItemMain->pixmap().width()) curPos.setX(pixmapItemMain->pixmap().width());
             if (curPos.y() > pixmapItemMain->pixmap().height()) curPos.setY(pixmapItemMain->pixmap().height());
-            QRect cropRect(QRect(curPos, coords.beadToPixelCoord(pasteSize)).normalized());
-            if (cropRect.x() < 0) cropRect.setX(0);
-            if (cropRect.y() < 0) cropRect.setY(0);
-            rubberBand->setGeometry(cropRect);
+            QRect pasteRect(QRect(curPos, coords.beadToPixelCoord(pasteSize)).normalized());
+            if (pasteRect.x() < 0) pasteRect.setX(0);
+            if (pasteRect.y() < 0) pasteRect.setY(0);
+            rubberBand->setGeometry(pasteRect);
             rubberBand->show();
         }
     }
@@ -168,19 +243,23 @@ void ImageScene::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
         {
             leftMouseButtonPressed = false;
 
-            // When releasing the LMB, we form the cropping area
+            // When releasing the LMB, the selection area becomes pending: the user can still
+            // move or resize it before confirming the crop (Enter/double-click) or cancelling it (Esc/right click)
             if (rubberBand->isVisible())
             {
-                QRect selectionRect = rubberBand->geometry();
+                if (activeHandle == CropHandle::none) cropRect = rubberBand->geometry();
                 const double scaleFactor = coords.getScaleFactor();
-                if ((std::floor(selectionRect.width()/scaleFactor) > 1.0) && (std::floor(selectionRect.height()/scaleFactor) > 1.0))
+                if ((std::floor(cropRect.width()/scaleFactor) > 1.0) && (std::floor(cropRect.height()/scaleFactor) > 1.0))
                 {
-                    emit crop(selectionRect);
+                    cropSelectionActive = true;
+                }
+                else
+                {
+                    cropSelectionActive = false;
                     rubberBand->hide();
-                    cursorMode = CursorMode::normal;
-                    emit exitCursorSelectionMode();
                 }
             }
+            activeHandle = CropHandle::none;
         }
         else if (cursorMode == CursorMode::pastePick)
         {
@@ -194,6 +273,61 @@ void ImageScene::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
     QGraphicsScene::mouseReleaseEvent(event);
 }
 
+void ImageScene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event)
+{
+    if ((event->button() & Qt::LeftButton) && (cursorMode == CursorMode::crop) && cropSelectionActive &&
+        (hitTestCropHandle(event->scenePos().toPoint(), cropRect) == CropHandle::inside))
+    {
+        confirmCropSelection();
+    }
+    QGraphicsScene::mouseDoubleClickEvent(event);
+}
+
+CropHandle ImageScene::hitTestCropHandle(const QPoint& pos, const QRect& rect) const
+{
+    if (!rect.adjusted(-cropHandleMargin, -cropHandleMargin, cropHandleMargin, cropHandleMargin).contains(pos)) return CropHandle::none;
+
+    bool onLeft = std::abs(pos.x() - rect.left()) <= cropHandleMargin;
+    bool onRight = std::abs(pos.x() - rect.right()) <= cropHandleMargin;
+    bool onTop = std::abs(pos.y() - rect.top()) <= cropHandleMargin;
+    bool onBottom = std::abs(pos.y() - rect.bottom()) <= cropHandleMargin;
+
+    if (onLeft && onTop) return CropHandle::topLeft;
+    if (onRight && onTop) return CropHandle::topRight;
+    if (onLeft && onBottom) return CropHandle::bottomLeft;
+    if (onRight && onBottom) return CropHandle::bottomRight;
+    if (onLeft) return CropHandle::left;
+    if (onRight) return CropHandle::right;
+    if (onTop) return CropHandle::top;
+    if (onBottom) return CropHandle::bottom;
+    if (rect.contains(pos)) return CropHandle::inside;
+    return CropHandle::none;
+}
+
+void ImageScene::confirmCropSelection()
+{
+    if ((cursorMode != CursorMode::crop) || !cropSelectionActive) return;
+
+    QRect selectionRect = cropRect;
+    cropSelectionActive = false;
+    activeHandle = CropHandle::none;
+    if (rubberBand) rubberBand->hide();
+    cursorMode = CursorMode::normal;
+    emit crop(selectionRect);
+    emit exitCursorSelectionMode();
+}
+
+void ImageScene::cancelCursorSelection()
+{
+    if (cursorMode == CursorMode::normal) return;
+
+    cursorMode = CursorMode::normal;
+    cropSelectionActive = false;
+    activeHandle = CropHandle::none;
+    leftMouseButtonPressed = false;
+    if (rubberBand) rubberBand->hide();
+    emit exitCursorSelectionMode();
+}
 
 void ImageScene::setImage(const QImage& image)
 {
